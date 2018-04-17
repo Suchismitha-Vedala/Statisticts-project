@@ -2,7 +2,7 @@ library(readxl)
 dir=getwd()
 setwd(dir)
 data=read_excel("MicrosurgeryPerformance.xlsx")
-
+View(data)
 attach(data)
 Session <- rep(c(1:5), each = 2)
 Session = rep(Session, 15)
@@ -24,4 +24,6 @@ Age = rep(data$Age,each=10)
 Sex =rep(data$Sex,each=10)
 Year = rep(data$`MS-Year`,each=10)  
 new_df=data.frame(Subject, Age, Year,Sex,Session,Task,Score1,Score2)
+View(new_df)
+
                     
