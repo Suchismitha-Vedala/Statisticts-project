@@ -130,7 +130,6 @@ Perspiration=c(a$pp_cut[1:75],b$pp_sut[1:75])
 new_df$Mean_Perspiration=Perspiration
 rownames(new_df) <- 1:nrow(new_df)
 
-write.csv(new_df,"total_data.csv")
 
 
 
