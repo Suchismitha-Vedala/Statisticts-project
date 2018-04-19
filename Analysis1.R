@@ -122,8 +122,8 @@ x=data.frame(subject,session,pp_cut)
 a = do.call("rbind",replicate(2,x,simplify = FALSE))
 y=data.frame(subject,session,pp_sut)
 b=do.call("rbind",replicate(2,y,simplify = FALSE))
-Cutting$Mean_Precipitation=a$pp_cut
-Suturing$Mean_Precipitation=b$pp_sut
+Cutting$Mean_Perspiration=a$pp_cut
+Suturing$Mean_Perspiration=b$pp_sut
 write.csv(new_df, "total_data.csv")
 write.csv(Cutting,"Cutting_data.csv")
 write.csv(Suturing,"Suturing_data.csv")
