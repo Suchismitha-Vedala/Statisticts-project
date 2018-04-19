@@ -13,7 +13,4 @@ From the new data frame: MicrosurgeryPerformance
 
 From all subjects and sessions:
 1.Draw plot of precipitation by taking average of every 10 frames (for baseline, cutting, suturing with each one color). repeat for 5 session and put them in one plot.(22 plots)
-2. For all subjects, take (Subject_tp.csv) pre and post tai scores and draw plot (T-test or anova)
-
-MasterfileMethodist
-Dummy variable analysis for Performance(Handling missing data attributes)
+2. For all subjects, take (Subject_tp.csv) pre and post tai scores and draw plot (T-test or anova )
