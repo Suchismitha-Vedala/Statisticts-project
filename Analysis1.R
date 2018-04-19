@@ -1,4 +1,5 @@
 library(readxl)
+library(ggplot2)
 dir=getwd()
 setwd(dir)
 data=read_excel("MicrosurgeryPerformance.xlsx")
@@ -70,7 +71,59 @@ dev.off()
 
 #Wilcox Test
 wilcox.test(Suturing[76:150,7],Suturing[1:75,7], paired=TRUE, alternative ="greater")
-
-
-
-
+pp_cut=pp_sut=c()
+session=subject=c()
+sub=unique(Cutting$Subject)
+for (i in sub){
+  if(i<10){
+    path=paste("subject0",i,sep="")
+  }
+  else{
+    path=paste("subject",i,sep="")
+  }
+  for (j in 1:5){
+    ses_path=paste(path,"/","session",j,"/",sep="")
+    if(i<10){
+      bas=paste(ses_path,"Subject0",i,"_Baseline",j,".csv",sep="")
+      cut=paste(ses_path,"Subject0",i,"_Cutting",j,".csv",sep="")
+      sut=paste(ses_path,"Subject0",i,"_Suturing",j,".csv",sep="")
+    }
+    else{
+      bas=paste(ses_path,"Subject",i,"_Baseline",j,".csv",sep="")
+      cut=paste(ses_path,"Subject",i,"_Cutting",j,".csv",sep="")
+      sut=paste(ses_path,"Subject",i,"_Suturing",j,".csv",sep="")
+    }
+    
+    if(isTRUE(file.exists(bas))&isTRUE(file.exists(sut))&isTRUE(file.exists(cut))){
+      baseline=read.csv(bas)
+      cutting=read.csv(cut)
+      suturing=read.csv(sut)
+      mean_b=mean(baseline[,3])
+      mean_c=mean(cutting[,3])
+      mean_s=mean(suturing[,3])
+      c=mean_c-mean_b
+      s=mean_s-mean_b
+      pp_cut=append(pp_cut,(c))  #put log here as log(c) if required
+      pp_sut=append(pp_sut,(s))
+      session=append(session,j)
+      subject=append(subject,i)
+    }
+    
+    else{
+      pp_cut=append(pp_cut,NA)
+      pp_sut=append(pp_sut,NA)
+      session=append(session,j)
+      subject=append(subject,i)
+    }
+   
+  }
+}
+x=data.frame(subject,session,pp_cut)
+a = do.call("rbind",replicate(2,x,simplify = FALSE))
+y=data.frame(subject,session,pp_sut)
+b=do.call("rbind",replicate(2,y,simplify = FALSE))
+Cutting$Mean_Precipitation=a$pp_cut
+Suturing$Mean_Precipitation=b$pp_sut
+write.csv(new_df, "total_data.csv")
+write.csv(Cutting,"Cutting_data.csv")
+write.csv(Suturing,"Suturing_data.csv")

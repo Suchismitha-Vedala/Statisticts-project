@@ -11,7 +11,6 @@
 
 \section*{Analysis of Scores:}
 
-
 \textbf{Hypothesis}:\\
 $Null Hypothesis : H_0 = $ The mean of scores is same for both the Scorers\\
 $Alternate Hypothesis : H_1 = $ The  mean of scores is different for both the Scorers\\
@@ -24,4 +23,6 @@ Cutting : When performed Wilcox test, p-value is greater than 0.05, which applie
 Suturing: When performed Wilcox test, p-value is less than 0.05, which states that the means of the scorers is different. \\
 \\
 Hence Scorer has an effect for Suturing , not Cutting\\
+
+
 \end{document}
