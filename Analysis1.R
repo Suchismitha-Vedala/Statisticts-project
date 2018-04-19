@@ -98,9 +98,9 @@ for (i in sub){
       baseline=read.csv(bas)
       cutting=read.csv(cut)
       suturing=read.csv(sut)
-      mean_b=mean(baseline[,3])
-      mean_c=mean(cutting[,3])
-      mean_s=mean(suturing[,3])
+      mean_b=mean(baseline$Perspiration)
+      mean_c=mean(cutting$Perspiration)
+      mean_s=mean(suturing$Perspiration)
       c=mean_c-mean_b
       s=mean_s-mean_b
       pp_cut=append(pp_cut,(c))  #put log here as log(c) if required
@@ -124,6 +124,11 @@ y=data.frame(subject,session,pp_sut)
 b=do.call("rbind",replicate(2,y,simplify = FALSE))
 Cutting$Mean_Perspiration=a$pp_cut
 Suturing$Mean_Perspiration=b$pp_sut
-write.csv(new_df, "total_data.csv")
-write.csv(Cutting,"Cutting_data.csv")
-write.csv(Suturing,"Suturing_data.csv")
+
+new_df <- new_df[order(new_df$Task),] 
+Perspiration=c(a$pp_cut[1:75],b$pp_sut[1:75])
+new_df$Mean_Perspiration=Perspiration
+write.csv(new_df,"total_data.csv")
+
+
+
