@@ -10,6 +10,7 @@
 \usepackage[protrusion=true, expansion=true]{microtype}
 \usepackage[english]{babel}
 \usepackage{sectsty}
+\usepackage[section]{placeins}
 
 
 \newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
@@ -71,12 +72,11 @@ During the main part of each session, the subjects underwent the following treat
 Explicit accuracy scores per task is provided in the data. Hence, the cutting task has its own accuracy scores and so is the case with the suturing task. The perspiration values are recorded in all time frames for all subjects and sessions. The subjects were asked to fill out a  NASA-TLX questionnaire after each task. he NASA-TLX instrument features five subscales measuring different aspects of the subjects' perceptions regarding task difficulty.We perform an analysis with this given data.\\   }
 
 \newpage
-\section*{Initial Analysis-Quality Control}
-\addcontentsline{toc}{section}{Quality Control}
-
+\section*{Initial Analysis}
+\addcontentsline{toc}{section}{Initial Analysis}
 \subsection*{Biographic Data}
 We draw a bar plot to see how gender defines data and histogram to see whether age has any effect on the data.\\
-\begin{figure}[!ht]
+\begin{figure}[!htb]
 	\begin{minipage}[c]{0.5\linewidth}
 	\includegraphics[width=\linewidth]{qc_gender}
 	\caption{Barplot of Gender Distribution}
@@ -90,7 +90,7 @@ We draw a bar plot to see how gender defines data and histogram to see whether a
 
 \subsection*{Trait Psychometric Data}
 We draw the histogram for Trait Anxiety Inventory(TAI) scores\\
-\begin{figure}[!ht]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{tai_plot}
 	\caption{Histogram of Tai Scores}
@@ -99,7 +99,7 @@ We draw the histogram for Trait Anxiety Inventory(TAI) scores\\
 \newpage
 \subsection*{State Psychometric Data}
 For each subject draw the bar plots for all the NASA-TLX subscales per task. This will give two figures per subject per subscale, one for suturing and one for cutting, where the evolution of the scores from the initial to the final session will be evident. \\
-\begin{figure}[!ht]
+\begin{figure}[!htb]
 	\begin{minipage}[c]{0.5\linewidth}
 	\includegraphics[width=\linewidth]{s1}
 	\caption{Subject 1 }
@@ -113,7 +113,7 @@ For each subject draw the bar plots for all the NASA-TLX subscales per task. Thi
 \newpage
 \subsection*{Perinasal Perspiration (Stress) Signal Data}
 For each session of each subject  we draw the perspiration values using black for baseline, green for cutting, and red for suturing. 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
 	\begin{minipage}[c]{0.5\linewidth}
 	\includegraphics[width=\linewidth]{s1pp}
 	\caption{Subject 1 }
@@ -127,14 +127,14 @@ For each session of each subject  we draw the perspiration values using black fo
 
 \subsection*{Performance Data}
 We draw the accuracy and time bar plots of each subject for each session and each task.\\
-\begin{figure}[!ht]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{S1Score_barplot}
 	\caption{Subject 1 Score Barplot}
 	\centering
 \end{figure}
 \\
-\begin{figure}[!ht]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{S1Time_barplot}
 	\caption{Subject 1 Time Barplot}
@@ -143,9 +143,7 @@ We draw the accuracy and time bar plots of each subject for each session and eac
 \newpage
 \section*{Hypothesis Testing}
 \addcontentsline{toc}{section}{Hypothesis Testing}
-
 \subsection*{1. Analysis of effect of each attribute on Score}
-
 \textbf{Hypothesis}:\\
 $Null Hypothesis : H_0 = $ The score obtained does not depend on the demographics of the subject , session , age , year , sex and perspiration.\\
 $Alternate Hypothesis : H_1 = $ The score obtained  depends on the demographics of the subject , session , age , year , sex and perspiration.\\
@@ -153,7 +151,7 @@ $Alternate Hypothesis : H_1 = $ The score obtained  depends on the demographics 
 \textbf{Approach:Linear Modelling}:\\
 Linear modeling gives the relationship between the dependent and independent variables. 
 In our data set we are finding the hypothesis between each attribute such as Age, sex, year and mean perspiration with the scores of scorer.\\
-\begin{figure}[!ht]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Picture1}
 	\caption{Linear model of score vs all other attributes}
@@ -172,107 +170,40 @@ Score1=2.128+(-34.67)*meanperspiration+0.4607*Age2.127*Sex+1.916*Session+-1.015*
 \textbf{Inference}:\\
 The above equation informs us that scores will increase by -34.67 for every one percent increase in mean Perspiration value , and score is directly proportional to age which states that the if older age people are hired the score would have increased\\
 \\
-\subsection*{2. Analysis of Age on Score}
-
-\textbf{Hypothesis}:\\
-$Null Hypothesis : H_0 = $ The score obtained does not depend on the age of the subject .\\
-$Alternate Hypothesis : H_1 = $ The score obtained depends on the age of the subject .\\
-\\
-\textbf{Approach:Linear Modelling}:\\
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.8\textwidth]{Picture2}
-	\caption{Linear model of score vs age}
-	\centering
+\subsection*{2. Performance Analysis With Respect to Number of Sutures Made}
+\textbf{Approach:Linear Model}:\\
+\begin{figure}[!htb]
+	\begin{minipage}[c]{0.5\linewidth}
+	\includegraphics[width=\linewidth]{PerformanceWRTSutures}
+	\caption{Performance WRT number of sutures made}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[c]{0.5\linewidth}
+	\includegraphics[width=\linewidth]{PerformanceWRTSutures_bar}
+	\caption{Performance WRT number of sutures summed across all subjects}
+	\end{minipage}
 \end{figure}
 \\
-From the above we observe that,\\
-Intercept = 5.865 \\
-coefficient for age = 0.641 \\
-Based on this, the complete regression equation is \\
-Score= 5.865 + 0.641xAge\\
-\\
-\textbf{Inference}:\\
-The above equation informs us that scores increase with Age.\\
-
-\subsection*{3. Analysis of Year on Score}
-
-\textbf{Hypothesis}:\\
-$Null Hypothesis : H_0 = $ The score obtained does not depend on the year of the subject .\\
-$Alternate Hypothesis : H_1 = $ The score obtained depends on the year of the subject .\\
-\\
-\textbf{Approach:Linear Modelling}:\\
-\begin{figure}[!ht]
+From the figures, we understand that the number of sutures increases with each session. \\
+To summarize it over all the subjects, we draw the bar plot with values of all subjects summed under each session , which gives us an understanding that with each session, the performance increases across all subjects.\\
+When creating the linear model, and performing the analysis, we observe that the number of sutures is highly dependent on sessions .
+\begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Picture3}
-	\caption{Linear model of score vs year}
+	\includegraphics[width=0.8\textwidth]{PerformanceWRTSutures_LM}
+	\caption{Analysis of Linear Model}
 	\centering
 \end{figure}
-\\
-From the above we observe that,\\
-Intercept = 18.816 \\
-coefficient for year = 1.341 \\
-Based on this, the complete regression equation is \\
-Score= 18.816 + 1.341xYear\\
-\\
+\newpage
 \textbf{Inference}:\\
-The above equation informs us that scores increase with Year . With every 1 year increase, the Score increases with a value of 20.157.\\
+The number of sutures made increases with each session, i.e the subjects are performing well.\\
 \\
-\subsection*{4. Analysis of Sex on Score}
-
-\textbf{Hypothesis}:\\
-$Null Hypothesis : H_0 = $ The score obtained does not depend on the sex of the subject .\\
-$Alternate Hypothesis : H_1 = $ The score obtained depends on the sex of the subject .\\
-\\
-\textbf{Approach:Linear Modelling}:\\
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.8\textwidth]{Picture4}
-	\caption{Linear model of score vs sex}
-	\centering
-\end{figure}
-\\
-From the above we observe that,\\
-Intercept = 17.24 \\
-coefficient for sex = 2.59 \\
-Based on this, the complete regression equation is \\
-Score= 17.24 + 2.59xSex\\
-\\
-\textbf{Inference}:\\
-The above equation informs us that scores depend on sex . \\
-
-\subsection*{5. Analysis of Perspiration on Score}
-
-\textbf{Hypothesis}:\\
-$Null Hypothesis : H_0 = $ The score obtained does not depend on the perspiration value  of the subject .\\
-$Alternate Hypothesis : H_1 = $ The score obtained depends on the perspiration value of the subject .\\
-\\
-\textbf{Approach:Linear Modelling}:\\
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.8\textwidth]{Picture5}
-	\caption{Linear model of score vs Perspiration}
-	\centering
-\end{figure}
-\\
-From the above we observe that,\\
-Intercept = 20.82 \\
-coefficient for perspiration = 368.27 \\
-Based on this, the complete regression equation is \\
-Score= 20.82 + 368.27xPerspiration\\
-\\
-\textbf{Inference}:\\
-The above equation informs us that scores are directly proportional to the perspiration value. \\
-
-
-\subsection*{6. Analysis of Scorers on Task:}
-
+\subsection*{3. Analysis of Scorers on Task:}
 \textbf{Hypothesis}:\\
 $Null Hypothesis : H_0 = $ The mean of scores is same for both the Scorers\\
 $Alternate Hypothesis : H_1 = $ The  mean of scores is different for both the Scorers\\
 \\
 \textbf{Approach:Wilcox Test}:\\
-\begin{figure}[!ht]
+\begin{figure}[!htb]
 	\begin{minipage}[c]{0.5\linewidth}
 	\includegraphics[width=\linewidth]{Cutting_Scores}
 	\caption{ Cutting Scores}
@@ -290,6 +221,25 @@ Suturing: When performed Wilcox test, p-value is less than 0.05, which states th
 \textbf{Inference}:\\
 Scorer has an effect for Suturing ,not Cutting\\
 
+\subsection*{4. Analysis of Number of Sutures made with respect to sex and sessions:}
+
+\textbf{Hypothesis}:\\
+$Null Hypothesis : H_0 = $ The number of sutures made is not significant on sex of the subject\\
+$Alternate Hypothesis : H_1 = $ The number of sutures made is  significant on sex of the subject\\
+\\
+\textbf{Approach:ANOVA}:\\
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{SuturingVsSex}
+	\caption{Interaction plot of Number of Sutures made wrt to Sex and Session}
+	\centering
+\end{figure}
+\\
+When performing the analysis for effect of Sutures on interaction of Sex and Sessions, we observe that, the p-value is 6.44e-11 which is way less than 0.05.\\
+Also, from the interaction plot, we understand that the number of sutures made increases with the number of sessions and females make more number of sutures than males in average.\\
+\\
+\textbf{Inference}:\\
+Sex has an effect on Number of Sutures made and females made more number of Sutures in 20 minutes and the number os sutures increases with each session, i.e subject's performance gets better with each session.\\
 
 
 
