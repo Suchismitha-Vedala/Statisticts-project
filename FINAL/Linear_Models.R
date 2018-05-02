@@ -127,7 +127,24 @@ ggsave(filename="Plot/TaskVsScore.pdf", plot=p7)
 
 
 
+#Analysis based on Scorer
+Cutting=read.csv("Data/Cutting_Data.csv")
+p8=ggplot(Cutting, aes(x=Scorer, y=Scores)) + theme(plot.title = element_text(hjust = 0.5)) +  
+  geom_boxplot()+ggtitle("Analysis of Scores based on Scorer") +labs(x="Scorer Number",y="Number of Scorer")
+ggsave(filename="Plot/Cutting_ScorerVsScore.pdf", plot=p8)
+#Wilcox Test
+CScorer1=as.numeric(Cutting[1:75,7])
+CScorer2=as.numeric(Cutting[76:150,7])
+wilcox.test(CScorer2,CScorer1, paired=TRUE, alternative ="two.sided")
 
+Suturing=read.csv("Data/Suturing_Data.csv")
+p9=ggplot(Suturing, aes(x=Scorer, y=Scores)) + 
+  geom_boxplot()+ggtitle("Analysis of Scores based on Scorer") +labs(x="Scorer Number",y="Number of Scorer")
+ggsave(filename="Plot/Suturing_ScorerVsScore.pdf", plot=p9)
+SScorer1=as.numeric(Suturing[1:75,7])
+SScorer2=as.numeric(Suturing[76:150,7])
+#Wilcox Test
+wilcox.test(SScorer2,SScorer1, paired=TRUE, alternative ="two.sided")
 
 
 

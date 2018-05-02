@@ -86,11 +86,14 @@ data=na.omit(data)
 attach(data)
 anova(lme(Scores~Mean_Perspiration+Age+Year+Sex+Task+Session,random=~1|Subject,data=data))
 
+
+
 #shapiro.test
 
 #Analysis of Scores_Cutting
+Cutting=read.csv("Data/Cutting_Data.csv")
 png(paste("Cutting_Scores.png"))
-ggplot(Cutting, aes(x=Scorer, y=Cutting$Scores)) + 
+ggplot(Cutting, aes(x=Scorer, y=Scores)) + 
   geom_boxplot()+ggtitle("Analysis of Scores based on Scorer") +labs(x="Scorer Number",y="Number of Scorer")
 dev.off()
 
