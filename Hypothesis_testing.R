@@ -5,15 +5,18 @@ library(readxl)
 library(ggplot2)
 library(reshape2)
 library(dplyr)
+library(nlme)
 dir=getwd()
 dir
 setwd(dir)
-Subject <- rep(unlist(data2$ID),each=5)
 data=read.csv("Total_Data_1.csv")
 View(data)
 data2=read_excel("MicrosurgeryPerformance.xlsx")
-View(data2)
 data2=data2[1:15,]
+Subject <- rep(unlist(data2$ID),each=5)
+session=rep(c(1:5),15)
+View(data2)
+
 Sutures=c()
 for( i in 1:15){
   Sutures=append(Sutures,c( as.numeric(data2[i,"Sutures 1"]),as.numeric(data2[i,"Sutures 2"]) ,as.numeric(data2[i,"Sutures 3"]) ,as.numeric(data2[i,"Sutures 4"]) ,as.numeric(data2[i,"Sutures 5"])         ))
@@ -62,3 +65,46 @@ dev.off()
 summary(lm(Sutures~session))
 
 t.test(Sutures,session)
+
+m1=min(na.exclude(data$Mean_Perspiration))
+m1=abs(m1)
+col1=c()
+col=data$Mean_Perspiration
+col1=as.numeric(col)+m1+0.1
+col2=log(col1)
+data$Mean_Perspiration=col1
+#Without Log
+anova(lm(formula = data$Scores~data$Mean_Perspiration+data$Age+data$Year+data$Sex+data$Task+data$Session))
+#With Log
+data$Mean_Perspiration=col2
+anova(lm(formula = data$Scores~data$Mean_Perspiration+data$Age+data$Year+data$Sex+data$Task+data$Session))
+
+
+
+install.packages("lme4")
+data=na.omit(data)
+attach(data)
+anova(lme(Scores~Mean_Perspiration+Age+Year+Sex+Task+Session,random=~1|Subject,data=data))
+
+#shapiro.test
+
+#Analysis of Scores_Cutting
+png(paste("Cutting_Scores.png"))
+ggplot(Cutting, aes(x=Scorer, y=Cutting$Scores)) + 
+  geom_boxplot()+ggtitle("Analysis of Scores based on Scorer") +labs(x="Scorer Number",y="Number of Scorer")
+dev.off()
+
+
+#Wilcox Test
+wilcox.test(Cutting[76:150,7],Cutting[1:75,7], paired=TRUE, alternative ="two-sided")
+
+#Analysis of Scores_Suturing
+
+png(paste("Suturing_Scores.png"))
+ggplot(Suturing, aes(x=Scorer, y=Suturing$Scores)) + 
+  geom_boxplot()+ggtitle("Analysis of Scores based on Scorer") +labs(x="Scorer Number",y="Number of Scorer")
+dev.off()
+
+
+#Wilcox Test
+wilcox.test(Suturing[76:150,7],Suturing[1:75,7], paired=TRUE, alternative ="two-sided")
