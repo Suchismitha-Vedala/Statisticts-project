@@ -137,18 +137,17 @@ hist(scores$V2,xlim=c(20,80),col='cadetblue', xlab="Tai scores",main="Histogram 
 # reflecting increased facility with the tasks
 State.Pyschometric.Data <- function(){
   for(i in c(1,2,3,4,5,6,7,8,9, 10, 11, 12, 13,19, 20, 21,22,23,24,25,26)){
-    
     path = paste("subject", formatC(i, width=2, flag="0"), sep="")  
     print(path)
     cuttingNasa = list.files(path = path, full.names = TRUE, recursive = TRUE, pattern = "^(.*)(Cutting)(.*)(NASA)(.*?)$")
     suturingNasa = list.files(path = path, full.names = TRUE, recursive = TRUE, pattern = "^(.*)(Suturing)(.*)(NASA)(.*?)$")
     
-    Response = c("Mental Demand","Physical Demand", "Temporal Demand", "Performance" ,"Effort" ,"Frustration", "Session")
+    Response = c("Mental Demand","Physical Demand", "Temporal Demand", "Performance" ,"Effort" ,"Frustration")
     cutNASA = as.data.frame(Response)
     for(i in cuttingNasa){
       subject = substr(i,27,28)
-      # temp <- read.csv(i, stringsAsFactors = FALSE)
-      temp <- rbind(temp, c("subject", subject))
+      temp <- read.csv(i, stringsAsFactors = FALSE)
+      #temp <- rbind(temp, c("subject", subject))
       cutNASA <- dplyr::left_join(cutNASA, temp, by="Response")
     }
     
@@ -157,7 +156,7 @@ State.Pyschometric.Data <- function(){
       subject = substr(i,27,28)
       temp <- read.csv(i, stringsAsFactors = FALSE)
       colnames(temp) <- c("Response", substr(i,38,38))
-      temp <- rbind(temp, c("subject", subject))
+      #temp <- rbind(temp, c("subject", subject))
       sutNASA <- dplyr::left_join(sutNASA, temp, by="Response")
     }
     
