@@ -1,0 +1,9 @@
+\select@language {english}
+\contentsline {section}{Introduction}{2}
+\contentsline {section}{Quality Control}{3}
+\contentsline {section}{Hypothesis Testing}{6}
+\contentsline {section}{Conclusion}{14}
+\contentsline {section}{Appendix}{15}
+\contentsline {subsection}{List of Figures}{15}
+\contentsline {subsection}{List of Tables}{15}
+\contentsline {section}{References}{16}
