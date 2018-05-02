@@ -1,11 +1,12 @@
 library(readxl)
 library(ggplot2)
+library(nlme)
 dir=getwd()
 setwd(dir)
 data=read_excel("Data/MicrosurgeryPerformance.xlsx")
 View(data)
 attach(data)
-Session <- rep(c(1:5), each = 2)
+Session <- rep(c("Session1","Session2","Session3","Session4","Session5"), each = 2)
 Session = rep(Session, 15)
 data=data[1:15,]
 

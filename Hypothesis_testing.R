@@ -53,7 +53,7 @@ summary(lm(Sutures~Sex*session))
 png(paste("PerformanceWRTSutures_bar.png"))
 ggplot(sdata,aes(session, Sutures)) +
   #geom_jitter(alpha=0.2) +geom_smooth(method=lm)+xlim(1,5)+
-  geom_bar(stat="identity",fill="#56B4E9")+
+  geom_bar(stat="identity",fill="#56B4E9")
   labs(x = 'Sessions', y = 'Number of Sutures')+ggtitle("Performance WRT number of sutures made summing  values of all subjects")
 dev.off()
 png(paste("PerformanceWRTSutures.png"))
