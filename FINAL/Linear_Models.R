@@ -6,9 +6,9 @@ library(dplyr)
 library(nlme)
 library(GGally)
 library(corrplot)
-library(plot3D)
-library(shiny)
-library(rgl)
+#library(plot3D)
+#library(shiny)
+#library(rgl)
 library(stringr)
 
 dir=getwd()
@@ -17,6 +17,11 @@ data=read.csv("Data/Normalised_Data.csv")
 data$Sex[data$Sex==1]="Male"
 data$Sex[data$Sex==2]="Female"
 
+#function to plot mean point
+give.n <- function(x){
+  return(data.frame(y = max(x)+1,
+                    label = paste0("n = ",length(x))))
+}
 
 #Normalised
 
@@ -78,25 +83,27 @@ for (i in 1:length(Sex)){
     Sex[i]="Female"
   }
 }
-p1=ggplot(sdata,aes(session, Sutures, colour=Sex)) + theme(plot.title = element_text(hjust = 0.5)) + 
-  geom_jitter(alpha=0.2) +geom_smooth(method=lm)+xlim(1,5)+
-  labs(x = 'Sessions', y = 'Number of Sutures')+ggtitle("Effect of Sex on Number of Sutures")
+p1=ggplot(sdata,aes(session, Sutures, colour=Sex))+ 
+  geom_jitter(alpha=0.2) +geom_smooth(method=lm)+xlim(1,5)+theme_light()+theme(plot.title = element_text(hjust = 0.5))+
+  labs(x = 'Sessions', y = 'Number of Sutures')+ggtitle("Effect of Sex on Number of Sutures")+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/SuturingVsSex.pdf", plot=p1)
 
 session=rep(c("Session1","Session2","Session3","Session4","Session5"),15)
 summary(lm(Sutures~Sex*session))
 
-p2=ggplot(sdata,aes(session, Sutures,fill=session)) + theme(plot.title = element_text(hjust = 0.5)) + 
+p2=ggplot(sdata,aes(session, Sutures,fill=session)) +theme_light()+ theme(plot.title = element_text(hjust = 0.5)) + 
   #geom_jitter(alpha=0.2) +geom_smooth(method=lm)+xlim(1,5)+
   geom_bar(stat="identity",fill="#56B4E9")+
+  theme(panel.grid.major = element_line(colour = 'transparent'))+
   labs(x = 'Sessions', y = 'Number of Sutures')+ggtitle("Performance WRT number of sutures made summing  values of all subjects")
 ggsave(filename="Plot/PerformanceWRTSutures_bar.pdf", plot=p2)
 
 
 p3=ggplot(sdata,aes(session, Sutures,fill=session)) +
-  geom_jitter(alpha=0.2) +geom_smooth(method=lm)+xlim(1,5)+ theme(plot.title = element_text(hjust = 0.5)) + 
+  geom_jitter(alpha=0.2) +geom_smooth(method=lm)+xlim(1,5)+theme_light()+theme(plot.title = element_text(hjust = 0.5)) + theme(plot.title = element_text(hjust = 0.5))+
   #geom_bar(stat="identity",fill="#56B4E9")+
-  labs(x = 'Sessions', y = 'Number of Sutures')+ggtitle("Performance WRT number of sutures made")
+  labs(x = 'Sessions', y = 'Number of Sutures')+ggtitle("Performance WRT number of sutures made")+
+  theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/PerformanceWRTSutures.pdf", plot=p3)
 
 summary(lm(Sutures~session))
@@ -121,45 +128,53 @@ anova(model2)
 
 
 
-p4 = ggplot(data, aes(x=Scorer, y=Scores,fill=Scorer))  + theme(plot.title = element_text(hjust = 0.5)) +  
-  geom_boxplot()+ggtitle("Analysis of Scores based on Scorer") +labs(x="Scorer Number",y="Number of Scores")
+p4 = ggplot(data, aes(x=Scorer, y=Scores,fill=Scorer))  +theme_light()+theme(plot.title = element_text(hjust = 0.5)) +  
+  geom_boxplot()+ggtitle("Analysis of Scores based on Scorer") +labs(x="Scorer Number",y="Number of Scores")+stat_summary(fun.y="mean", geom="point", size=1, pch=16, color="red") +
+  stat_summary(fun.data = give.n, geom = "text")+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/ScorerVsScore.pdf", plot=p4)
 
 
-p5 = ggplot(data, aes(x=Sex, y=Scores,fill=Sex))  + theme(plot.title = element_text(hjust = 0.5)) +  
-  geom_boxplot()+ggtitle("Analysis of Scores based on Gender") +labs(x="Gender",y="Number of Scores")
+p5 = ggplot(data, aes(x=Sex, y=Scores,fill=Sex))  +theme_light()+theme(plot.title = element_text(hjust = 0.5)) +  
+  geom_boxplot()+ggtitle("Analysis of Scores based on Gender") +labs(x="Gender",y="Number of Scores")+stat_summary(fun.y="mean", geom="point", size=1, pch=16, color="red") +
+  stat_summary(fun.data = give.n, geom = "text")+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/GenderVsScore.pdf", plot=p5)
 
 
-p6 = ggplot(data, aes(x=Session, y=Scores,fill=Session))  + theme(plot.title = element_text(hjust = 0.5)) +  
-  geom_boxplot()+ggtitle("Analysis of Scores based on Scorer") +labs(x="Session Number",y="Number of Scores")
+p6 = ggplot(data, aes(x=Session, y=Scores,fill=Session))  +theme_light()+ theme(plot.title = element_text(hjust = 0.5)) +  
+  geom_boxplot()+ggtitle("Analysis of Scores based on Scorer") +labs(x="Session Number",y="Number of Scores")+stat_summary(fun.y="mean", geom="point", size=1, pch=16, color="red") +
+  stat_summary(fun.data = give.n, geom = "text")+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/SessionVsScore.pdf", plot=p6)
 
 
-p7 = ggplot(data, aes(x=Task, y=Scores,fill=Task))  + theme(plot.title = element_text(hjust = 0.5)) +  
-  geom_boxplot()+ggtitle("Analysis of Scores based on Task") +labs(x="Task",y="Number of Scores")
+p7 = ggplot(data, aes(x=Task, y=Scores,fill=Task))  + theme_light()+theme(plot.title = element_text(hjust = 0.5)) +  
+  geom_boxplot()+ggtitle("Analysis of Scores based on Task") +labs(x="Task",y="Number of Scores")+stat_summary(fun.y="mean", geom="point", size=1, pch=16, color="red") +
+  stat_summary(fun.data = give.n, geom = "text")+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/TaskVsScore.pdf", plot=p7)
 
 #Summary_Based on Time with all other attributes
 summary(lm(formula = Time~log(Normalised_PP)+Age+Sex+Task+Session,data=data))
 
-p8 = ggplot(data, aes(x=Scorer, y=Time,fill=Scorer))  + theme(plot.title = element_text(hjust = 0.5)) +  
-  geom_boxplot()+ggtitle("Analysis of Time based on Scorer") +labs(x="Scorer Number",y="Time in seconds")
+p8 = ggplot(data, aes(x=Scorer, y=Time,fill=Scorer))  + theme_light()+theme(plot.title = element_text(hjust = 0.5)) +  
+  geom_boxplot()+ggtitle("Analysis of Time based on Scorer") +labs(x="Scorer Number",y="Time in seconds")+stat_summary(fun.y="mean", geom="point", size=1, pch=16, color="red") +
+  stat_summary(fun.data = give.n, geom = "text",vjust = 0)+ylim(0,1300)+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/ScorerVsTime.pdf", plot=p8)
 
 
-p9 = ggplot(data, aes(x=Sex, y=Time,fill=Sex)) + theme(plot.title = element_text(hjust = 0.5)) +  
-  geom_boxplot()+ggtitle("Analysis of Time based on Gender") +labs(x="Gender",y="Time in seconds")
+p9 = ggplot(data, aes(x=Sex, y=Time,fill=Sex)) + theme_light()+theme(plot.title = element_text(hjust = 0.5)) +  
+  geom_boxplot()+ggtitle("Analysis of Time based on Gender") +labs(x="Gender",y="Time in seconds")+stat_summary(fun.y="mean", geom="point", size=1, pch=16, color="red") +
+  stat_summary(fun.data = give.n, geom = "text")+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/GenderVsTime.pdf", plot=p9)
 
 
-p10 = ggplot(data, aes(x=Session, y=Time,fill=Session))  + theme(plot.title = element_text(hjust = 0.5)) +  
-  geom_boxplot()+ggtitle("Analysis of Time based on Scorer") +labs(x="Session Number",y="Time in seconds")
+p10 = ggplot(data, aes(x=Session, y=Time,fill=Session))  +theme_light()+ theme(plot.title = element_text(hjust = 0.5)) +  
+  geom_boxplot()+ggtitle("Analysis of Time based on Scorer") +labs(x="Session Number",y="Time in seconds")+stat_summary(fun.y="mean", geom="point", size=1, pch=16, color="red") +
+  stat_summary(fun.data = give.n, geom = "text")+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/SessionVsTime.pdf", plot=p10)
 
 
-p11 = ggplot(data, aes(x=Task,y=Time,fill=Task))  + theme(plot.title = element_text(hjust = 0.5)) +  
-  geom_boxplot()+ggtitle("Analysis of Time based on Task") +labs(x="Task",y="Time in seconds")
+p11 = ggplot(data, aes(x=Task,y=Time,fill=Task))  +theme_light()+ theme(plot.title = element_text(hjust = 0.5)) +  
+  geom_boxplot()+ggtitle("Analysis of Time based on Task") +labs(x="Task",y="Time in seconds")+stat_summary(fun.y="mean", geom="point", size=1, pch=16, color="red") +
+  stat_summary(fun.data = give.n, geom = "text",vjust = 0)+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/TaskVsTime.pdf", plot=p11)
 
 
@@ -168,8 +183,9 @@ ggsave(filename="Plot/TaskVsTime.pdf", plot=p11)
 
 #Analysis based on Scorer
 Cutting=read.csv("Data/Cutting_Data.csv")
-p12=ggplot(Cutting, aes(x=Scorer, y=Scores,fill=Scorer)) + theme(plot.title = element_text(hjust = 0.5)) +  
-  geom_boxplot()+ggtitle("Analysis of Scores based on Scorer") +labs(x="Scorer Number",y="Number of Scorer")
+p12=ggplot(Cutting, aes(x=Scorer, y=Scores,fill=Scorer)) +theme_light()+ theme(plot.title = element_text(hjust = 0.5)) +  
+  geom_boxplot()+ggtitle("Analysis of Scores based on Scorer") +labs(x="Scorer Number",y="Scores")+stat_summary(fun.y="mean", geom="point", size=1, pch=16, color="red") +
+  stat_summary(fun.data = give.n, geom = "text")+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/Cutting_ScorerVsScore.pdf", plot=p12)
 #Wilcox Test
 CScorer1=as.numeric(Cutting[1:75,"Scores"])
@@ -177,8 +193,9 @@ CScorer2=as.numeric(Cutting[76:150,"Scores"])
 wilcox.test(CScorer2,CScorer1, paired=TRUE, alternative ="two.sided")
 
 Suturing=read.csv("Data/Suturing_Data.csv")
-p13=ggplot(Suturing, aes(x=Scorer, y=Scores,fill=Scorer)) + 
-  geom_boxplot()+ggtitle("Analysis of Scores based on Scorer") +labs(x="Scorer Number",y="Number of Scorer")
+p13=ggplot(Suturing, aes(x=Scorer, y=Scores,fill=Scorer)) +theme_light()+theme(plot.title = element_text(hjust = 0.5)) +
+  geom_boxplot()+ggtitle("Analysis of Scores based on Scorer") +labs(x="Scorer Number",y="Scores")+stat_summary(fun.y="mean", geom="point", size=1, pch=16, color="red") +
+  stat_summary(fun.data = give.n, geom = "text")+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/Suturing_ScorerVsScore.pdf", plot=p13)
 SScorer1=as.numeric(Suturing[1:75,"Scores"])
 SScorer2=as.numeric(Suturing[76:150,"Scores"])
@@ -196,7 +213,7 @@ shapiro.test(SScorer2)
 wilcox.test(Cutting$Scores,Suturing$Scores,paired=TRUE, alternative ="two.sided")
 
 
-p14=ggplot(sdata,aes(Sutures,Time)) + theme(plot.title = element_text(hjust = 0.5))+geom_point()+geom_smooth()+ylim(1150,1210)+ggtitle("Performance Analysis of Suturing") +labs(y="Time in Seconds",x="Number of Sutures made")
+p14=ggplot(sdata,aes(Sutures,Time))+theme_light()+ theme(plot.title = element_text(hjust = 0.5))+geom_point()+geom_smooth()+ylim(1150,1210)+ggtitle("Performance Analysis of Suturing") +labs(y="Time in Seconds",x="Number of Sutures made")+theme(panel.grid.major = element_line(colour = 'transparent'))
 p14 <- p14 + facet_grid(session~.)
 
 ggsave(filename="Plot/SuturingVsTime.pdf", plot=p14) 
@@ -206,22 +223,23 @@ cdata=data.frame(Cutting$Age,Cutting$Sex,Cutting$Session,Cutting$Scorer,Cutting$
 sdata=data.frame(Suturing$Age,Suturing$Sex,Suturing$Session,Suturing$Scorer,Suturing$Scores)
 colnames(cdata)=colnames(sdata)=c("Age","Sex","Session","Scorer","Scores")
 
-p15=ggpairs(cdata,columns=2:5 ,aes(col = Scorer, alpha=0.3))
+p15=ggpairs(cdata,columns=2:5 ,aes(col = Scorer, alpha=0.3))+theme_light()+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/Cutting_GGpairs.pdf", plot=p15) 
 
 
-p16=ggpairs(sdata,columns=2:5 , aes(col = Scorer, alpha=0.2))
+p16=ggpairs(sdata,columns=2:5 , aes(col = Scorer, alpha=0.2))+theme_light()+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/Suturing_GGpairs.pdf", plot=p16) 
 
 
-p17=ggpairs(data, columns=5:8,aes(col = Task, alpha=0.2))
+p17=ggpairs(data, columns=5:8,aes(col = Task, alpha=0.2))+theme_light()+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/Data_GGpairs.pdf", plot=p17) 
 
 #Subjects Vs Mean pp
 
 p18=ggplot(data, aes(Subjects, Normalised_PP,fill=Task)) + 
-  geom_bar(stat="identity", position = "dodge") + 
-  scale_fill_brewer(palette = "Set1")+ggtitle("Analysis of Perspiration based on Subject") +labs(x="Subject Number",y="Normalised Mean Perspiration")
+  geom_bar(stat="identity", position = "dodge") + theme_light()+theme(plot.title = element_text(hjust = 0.5))+
+  scale_fill_brewer(palette = "Set1")+ggtitle("Analysis of Perspiration based on Subject") +labs(x="Subject Number",y="Normalised Mean Perspiration")++stat_summary(fun.y="mean", geom="point", size=1, pch=16, color="red") +
+  stat_summary(fun.data = give.n, geom = "text")+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/SubjectVsPP.pdf", plot=p18)
 
 
@@ -248,7 +266,9 @@ data$Tai=tai
 
 
 p19=ggplot(data,aes(Tai,Scores,fill=Task)) + 
-  geom_bar(stat="identity", position = "dodge") +theme(plot.title=element_text(hjust = 0.5))+ ggtitle("Performance Analysis of Tai")+labs(x="Tai Score",y="Scores")
+  geom_bar(stat="identity", position = "dodge") +theme_light()+theme(plot.title=element_text(hjust = 0.5))+ ggtitle("Performance Analysis of Tai")+labs(x="Tai Score",y="Scores")++stat_summary(fun.y="mean", geom="point", size=1, pch=16, color="red") +
+  stat_summary(fun.data = give.n, geom = "text")+theme(panel.grid.major = element_line(colour = 'transparent'))
+  
 ggsave(filename="Plot/TaiVsScores.pdf",plot=p19)
 
 
@@ -257,14 +277,17 @@ d2=d1[d1$Tai>40,]
 d3=d1[d1$Tai<=40,]
 Score_below=d3$Scores
 Score_Above=d2$Scores
-t1=rep("Less than 40",140)
+t1=rep("Less than 40",160)
 t2=rep("Greater than 40",140)
 TAI=append(t1,t2)
-Score=append(Score_below[1:140],Score_Above)
+Score=append(Score_below[1:160],Score_Above)
 nd1=data.frame(TAI,Score)
 
-p20 = ggplot(nd1, aes(x=TAI,y=Score,fill=TAI))  + theme(plot.title = element_text(hjust = 0.5)) +  
-  geom_boxplot()+ggtitle("Analysis of Tai Vs Score") +labs(x="Tai",y="Score")
+
+
+p20 = ggplot(nd1, aes(x=TAI,y=Score,fill=TAI))  + theme_light()+theme(plot.title = element_text(hjust = 0.5)) +  
+  geom_boxplot()+ggtitle("Analysis of Tai Vs Score") +labs(x="Tai",y="Score")+stat_summary(fun.y="mean", geom="point", size=1, pch=16, color="red") +
+  stat_summary(fun.data = give.n, geom = "text")+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/TaiVsScores_Box.pdf", plot=p20)
 
 
