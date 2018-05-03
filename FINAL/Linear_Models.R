@@ -9,6 +9,7 @@ library(corrplot)
 library(plot3D)
 library(shiny)
 library(rgl)
+library(stringr)
 
 dir=getwd()
 dir
@@ -106,11 +107,19 @@ summary(lm(Sutures~session))
 
 
 #Summary_Based on Scores with all other attributes
-summary(lm(formula = Scores~log(Normalised_PP)+Age+Sex+Task+Scorer+Session,data=data))
-
+model=(lm(formula = Scores~log(Normalised_PP)+Age+Sex+Task+Scorer+Session,data=data))
+summary(model)
 #Random Effect
+
+Subjects=rep(c("S1","S2","S3","S4","S7","S8","S10","S11","S12","S13","S19","S21","S22","S24","S26"),each=5)
+Subjects=rep(Subjects,4)
+data$Subjects=Subjects
 rand_data=na.omit(data)
-anova(lme(Scores~Normalised_PP+Age+Year+Sex+Task+Session,random=~1|Subject,data=rand_data))
+model2=(lme(Scores~Normalised_PP+Age+Year+Sex+Task+Session,random=~1|Subjects,data=rand_data,method="REML"))
+anova(model2)
+
+
+
 
 p4 = ggplot(data, aes(x=Scorer, y=Scores,fill=Scorer))  + theme(plot.title = element_text(hjust = 0.5)) +  
   geom_boxplot()+ggtitle("Analysis of Scores based on Scorer") +labs(x="Scorer Number",y="Number of Scores")
@@ -192,16 +201,73 @@ p14 <- p14 + facet_grid(session~.)
 
 ggsave(filename="Plot/SuturingVsTime.pdf", plot=p14) 
 
-
+#GGPairs
 cdata=data.frame(Cutting$Age,Cutting$Sex,Cutting$Session,Cutting$Scorer,Cutting$Scores)
 sdata=data.frame(Suturing$Age,Suturing$Sex,Suturing$Session,Suturing$Scorer,Suturing$Scores)
 colnames(cdata)=colnames(sdata)=c("Age","Sex","Session","Scorer","Scores")
-p15=ggpairs(cdata, aes(col = Scorer, alpha=0.4))
+
+p15=ggpairs(cdata,columns=2:5 ,aes(col = Scorer, alpha=0.3))
 ggsave(filename="Plot/Cutting_GGpairs.pdf", plot=p15) 
-p16=ggpairs(sdata, aes(col = Scorer, alpha=0.4))
+
+
+p16=ggpairs(sdata,columns=2:5 , aes(col = Scorer, alpha=0.2))
 ggsave(filename="Plot/Suturing_GGpairs.pdf", plot=p16) 
 
-with(data,plot3d(data$Scores,data$Session,data$Subject,
-                    size=1, type="s", main="3D Linear Model Fit"))
-with(data,surface3d(unique(data$Scores),unique(data$Session),data$Subject,
-                      alpha=0.3,front="line", back="line"))
+
+p17=ggpairs(data, columns=5:8,aes(col = Task, alpha=0.2))
+ggsave(filename="Plot/Data_GGpairs.pdf", plot=p17) 
+
+#Subjects Vs Mean pp
+
+p18=ggplot(data, aes(Subjects, Normalised_PP,fill=Task)) + 
+  geom_bar(stat="identity", position = "dodge") + 
+  scale_fill_brewer(palette = "Set1")+ggtitle("Analysis of Perspiration based on Subject") +labs(x="Subject Number",y="Normalised Mean Perspiration")
+ggsave(filename="Plot/SubjectVsPP.pdf", plot=p18)
+
+
+#Tai Scores Analysis
+tai=Subject_Number=c()
+for (i in  c(1,2,3,4,5,6,7,8,9, 10,11, 12, 13,19,20,21,22,23,24,25,26)){
+ 
+  if(i<10){
+    path=paste("Data/subject0",i,"/","Subject0",i,"_tp.csv",sep="")
+  }
+  else{
+    path=paste("Data/subject",i,"/","Subject",i,"_tp.csv",sep="")
+  }
+  temp=read.csv(path,header=TRUE)
+  v1=as.numeric(str_extract(colnames(temp)[2], "\\-*\\d+\\.*\\d*"))
+  tai=append(tai,v1)
+  Subject_Number=append(Subject_Number,paste("S",i,sep=""))
+  
+}
+tai_data=data.frame(Subject_Number,tai)
+tai_data=tai_data[-c(5,6,9,15,18,20),]
+tai=rep(rep(tai_data$tai,each=5),4)
+data$Tai=tai
+
+
+p19=ggplot(data,aes(Tai,Scores,fill=Task)) + 
+  geom_bar(stat="identity", position = "dodge") +theme(plot.title=element_text(hjust = 0.5))+ ggtitle("Performance Analysis of Tai")+labs(x="Tai Score",y="Scores")
+ggsave(filename="Plot/TaiVsScores.pdf",plot=p19)
+
+
+d1=data
+d2=d1[d1$Tai>40,]
+d3=d1[d1$Tai<=40,]
+Score_below=d3$Scores
+Score_Above=d2$Scores
+t1=rep("Less than 40",140)
+t2=rep("Greater than 40",140)
+TAI=append(t1,t2)
+Score=append(Score_below[1:140],Score_Above)
+nd1=data.frame(TAI,Score)
+
+p20 = ggplot(nd1, aes(x=TAI,y=Score,fill=TAI))  + theme(plot.title = element_text(hjust = 0.5)) +  
+  geom_boxplot()+ggtitle("Analysis of Tai Vs Score") +labs(x="Tai",y="Score")
+ggsave(filename="Plot/TaiVsScores_Box.pdf", plot=p20)
+
+
+
+
+t.test(Score_below,Score_Above)
