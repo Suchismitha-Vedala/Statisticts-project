@@ -136,8 +136,10 @@ hist(scores$V2,xlim=c(20,80),col='cadetblue', xlab="Tai scores",main="Histogram 
 # evolution of the scores from the initial to the final session will be evident. There should be a downward trend, 
 # reflecting increased facility with the tasks
 State.Pyschometric.Data <- function(){
+  plots = NULL
+  group.colors <- c("1" ="#8cb369","2"="#f4e285","3"="#f4a259","4"="#5b8e7d","5"="#bc4b51")
   for(i in c(1,2,3,4,5,6,7,8,9, 10, 11, 12, 13,19, 20, 21,22,23,24,25,26)){
-    i = 1
+    ttl = i
     path = paste("subject", formatC(i, width=2, flag="0"), sep="")  
     print(path)
     cuttingNasa = list.files(path = path, full.names = TRUE, recursive = TRUE, pattern = "^(.*)(Cutting)(.*)(NASA)(.*?)$")
@@ -148,6 +150,7 @@ State.Pyschometric.Data <- function(){
     for(i in cuttingNasa){
       subject = substr(i,27,28)
       temp <- read.csv(i, stringsAsFactors = FALSE)
+      colnames(temp) <- c("Response", substr(i,18,18))
       #temp <- rbind(temp, c("subject", subject))
       cutNASA <- dplyr::left_join(cutNASA, temp, by="Response")
     }
@@ -163,23 +166,29 @@ State.Pyschometric.Data <- function(){
     
     #added new by yash
     cutNASA <- melt(cutNASA, id.vars='Response')
-    
-    c <- ggplot(cutNASA, aes(Response, as.integer(value))) +   
-        geom_bar(aes(fill = variable), position = "dodge", stat="identity") + scale_fill_discrete(name="Sessions") + ylab("Scores") + ylim(0,20)+ xlab("")+
-      theme(plot.title = element_text(hjust = 0.5), legend.position="none")+ ggtitle(paste(path, "State Psychometric Data of Cutting and Suturing"))
+    cutNASA$action <- "Cutting"
       
     sutNASA <- melt(sutNASA, id.vars='Response')
+    sutNASA$action <- "Suturing"
     
-    s <- ggplot(sutNASA, aes(Response, as.integer(value))) + ylim(0,20) +
-      geom_bar(aes(fill = variable), position = "dodge", stat="identity") + scale_fill_discrete(name="Sessions") + ylab("Scores") + theme(legend.position = "bottom") +
-      theme(plot.title = element_text(hjust = 0.5))
+    t <- rbind(cutNASA, sutNASA)
+    ttl <- paste("Subject ",ttl)
+    q <- ggplot(t, aes(Response, as.integer(value))) + ylim(0,20) +
+      geom_bar(aes(fill = factor(variable)), position = "dodge", stat="identity")  + ylab("Scores") + theme(legend.position = "bottom") +
+      theme(plot.title = element_text(hjust = 0.5)) #+ ggtitle(paste(ttl, "State Psychometric Data of Cutting and Suturing")) + scale_fill_manual(name="Sessions",values=group.colors) 
+    q <- q + facet_grid(action ~ .)
     
     
-    pdf(paste(path,"State Psychometric Data of Cutting and Suturing.pdf"))
-    multiplot(c, s, cols = 1)
-    dev.off()
+    plots[[i]] <- q
+    
+    #pdf(paste(path,"State_Psychometric_Data_of_Cutting_and_Suturing.pdf",sep="_"))
+    #print(q)
+    #dev.off()
     
   }
+  
+  multiplot(plots[[1]],plots[[2]], cols = 2)
+  
 }
 State.Pyschometric.Data()
 
@@ -277,11 +286,11 @@ Perinasal.Perspiration <- function(){
     p <- p +  xlab("Time[S]") +
       ylab(expression(paste("Perinasal Perspiration"))) +
       geom_line() +
-      ggtitle(title) +
+      ggtitle(title) + theme(legend.position = "bottom") +
       scale_colour_manual(values=group.colors) + theme(plot.title = element_text(hjust = 0.5)) +
       guides(color=guide_legend(title="Task")) 
     p <- p + facet_grid(session ~ . , scales = "free")
-    pdf(paste(substr(path,8,9),"Perinasal Perspiration.pdf")) 
+    pdf(paste(substr(path,8,9),"Perinasal_Perspiration.pdf",sep="_")) 
     print(p)
     dev.off()
     
@@ -305,7 +314,7 @@ parse<-function(x,npar=TRUE,print=TRUE){
     sec<-sapply(s,"[",2)
     min<-as.numeric(min)
     sec<-as.numeric(sec)
-    totalMinutes=min + (sec/100)
+    totalMinutes=min * 60 + (sec)
     return (totalMinutes)
   } else {
     return (as.numeric(x))
@@ -408,10 +417,10 @@ for (i in 1:15) {
   q <- melt(t, id=c("ID","session","Score2Sut","Score2Cut","Score1Sut","Score1Cut"))
   p <- ggplot(q, aes(session,value, goup=variable , fill=variable)) +  geom_bar(stat="identity",position = "dodge")
   p <- p +  xlab("Sessions") +
-    ylab("Time[mins]") +
+    ylab("Time[secs]") +
     ggtitle(title) + theme(plot.title = element_text(hjust = 0.5)) + theme(legend.position = "bottom") +
-    scale_fill_discrete(name = "", labels = c("Cutting", "Suturing")) 
-  pdf(paste(i,"Time barplot.pdf")) 
+    scale_fill_discrete(name = "Task", labels = c("Cutting", "Suturing")) 
+  pdf(paste(i,"Time_barplot.pdf",sep = "_")) 
   print(p)
   dev.off()
 }
@@ -422,17 +431,21 @@ for (i in 1:15) {
   title <- paste("Score Barplot for Subject ", i)
   q <- melt(t, id=c("ID","session","Score2Sut","Score2Cut"))
   r <- melt(t, id=c("ID","session","Score1Sut","Score1Cut"))
-  p <- ggplot(q, aes(session,value, goup=variable , fill=variable)) +  geom_bar(stat="identity",position = "dodge")
+  colnames(q) <- colnames(r) <- c("ID","session","Sut","Cut","variable","value")
+  q$scorer <- "Scorer 2"
+  r$scorer <- "Scorer 1"
+  r <- rbind(r,q)
+  r$variable <- substr(r$variable,7,9)
   u <- ggplot(r, aes(session,value, goup=variable , fill=variable)) +  geom_bar(stat="identity",position = "dodge") + xlab("Sessions") +
-    ylab("Score") + theme(legend.position = "bottom") +
-    scale_fill_discrete(name = "", labels = c("Cutting", "Suturing")) 
-  p <- p +  xlab("") +
-    ylab("Score") +
-    ggtitle(title) + theme(plot.title = element_text(hjust = 0.5)) + theme(legend.position = "none") + 
-    scale_fill_discrete(name = "", labels = c("Cutting", "Suturing")) 
-  pdf(paste(i,"Score barplot.pdf")) 
+    ylab("Score") + theme(legend.position = "bottom") + 
+    ggtitle(title) + theme(plot.title = element_text(hjust = 0.5)) +
+    scale_fill_discrete(name = "Task", labels = c("Cutting", "Suturing"))
+  u <- u + facet_grid(scorer~.)
   
-  multiplot(p, u, cols = 1)
+  pdf(paste(i,"Score_barplot.pdf",sep="_")) 
+  
+  #multiplot(p, u, cols = 1)
+  print(u)
   dev.off()
 }
 
