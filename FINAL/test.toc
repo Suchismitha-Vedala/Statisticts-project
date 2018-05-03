@@ -1,8 +1,0 @@
-\select@language {english}
-\contentsline {section}{Introduction}{2}
-\contentsline {section}{Initial Analysis}{3}
-\contentsline {section}{Conclusion}{9}
-\contentsline {section}{Appendix}{10}
-\contentsline {subsection}{List of Figures}{10}
-\contentsline {subsection}{List of Tables}{10}
-\contentsline {section}{References}{11}

@@ -110,7 +110,7 @@ For each subject draw the bar plots for all the NASA-TLX subscales per task. Thi
 	\caption{Subject 2}
 	\end{minipage}
 \end{figure}
-\newpage
+
 \subsection*{Perinasal Perspiration (Stress) Signal Data}
 For each session of each subject  we draw the perspiration values using black for baseline, green for cutting, and red for suturing. 
 \begin{figure}[!htb]
@@ -124,7 +124,7 @@ For each session of each subject  we draw the perspiration values using black fo
 	\caption{Subject 2}
 	\end{minipage}
 \end{figure}
-
+\FloatBarrier
 \subsection*{Performance Data}
 We draw the accuracy and time bar plots of each subject for each session and each task.\\
 \begin{figure}[!htb]
@@ -140,9 +140,10 @@ We draw the accuracy and time bar plots of each subject for each session and eac
 	\caption{Subject 1 Time Barplot}
 	\centering
 \end{figure}\\
-\begin{comment}
+
 \newpage
 \section*{Hypothesis Testing}
+We normalize the perspiration values and perform the log of the values for our analysis.\\
 \addcontentsline{toc}{section}{Hypothesis Testing}
 \subsection*{1. Analysis of effect of each attribute on Score}
 \textbf{Hypothesis}:\\
@@ -154,33 +155,88 @@ Linear modeling gives the relationship between the dependent and independent var
 In our data set we are finding the hypothesis between each attribute such as Age, sex, year and mean perspiration with the scores of scorer.\\
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Picture1}
+	\includegraphics[width=0.8\textwidth]{ScoreSummary.pdf}
 	\caption{Linear model of score vs all other attributes}
 	\centering
 \end{figure}
 \\
-From the above we observe that,\\
-Intercept = 2.128 \\
-coefficient for mean perspiration = -34.67 \\
-coefficient for age = 0.4606\\  
-coefficient for sex = 2.127 \\
-coefficient for session = 1.916 \\
-Based on this, the complete regression equation is \\
-Score1=2.128+(-34.67)*meanperspiration+0.4607*Age2.127*Sex+1.916*Session+-1.015*task+0.029*scorer\\
-\\
+\begin{figure}[!htb]
+	\begin{minipage}[c]{0.5\linewidth}
+	\includegraphics[width=\linewidth]{ScorerVsScore.pdf}
+	\caption{Analysis of Scores based on Score }
+	\end{minipage}
+	\hfill
+	\begin{minipage}[c]{0.5\linewidth}
+	\includegraphics[width=\linewidth]{GenderVsScore.pdf}
+	\caption{Analysis of Scores based on Gender}
+	\end{minipage}
+\end{figure}
+\begin{figure}[!htb]
+	\begin{minipage}[c]{0.5\linewidth}
+	\includegraphics[width=\linewidth]{TaskVsScore.pdf}
+	\caption{Analysis of Scores based on Task}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[c]{0.5\linewidth}
+	\includegraphics[width=\linewidth]{SessionVsScore.pdf}
+	\caption{Analysis of Scores based on Session}
+	\end{minipage}
+\end{figure}
 \textbf{Inference}:\\
 The above equation informs us that scores will increase by -34.67 for every one percent increase in mean Perspiration value , and score is directly proportional to age which states that the if older age people are hired the score would have increased\\
 \\
-\subsection*{2. Performance Analysis With Respect to Number of Sutures Made}
+\FloatBarrier
+\subsection*{2. Analysis of effect of each attribute on Time}
+\textbf{Hypothesis}:\\
+$Null Hypothesis : H_0 = $ The time taken to do a task is not dependednt of age, session, sex, Perspiration.\\
+$Alternate Hypothesis : H_1 = $ he time taken to do a task depends on  age, session, sex, Perspiration.\\
+\\
+\textbf{Approach:Linear Modelling}:\\
+Linear modeling gives the relationship between the dependent and independent variables. 
+In our data set we are finding the hypothesis between each attribute such as Age, sex, year and mean perspiration with the time taken to do the task.\\
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{TimeSummary.pdf}
+	\caption{Linear model of Time vs all other attributes}
+	\centering
+\end{figure}
+\\
+\begin{figure}[!htb]
+	\begin{minipage}[c]{0.5\linewidth}
+	\includegraphics[width=\linewidth]{ScorerVsTime.pdf}
+	\caption{Analysis of Time based on Score }
+	\end{minipage}
+	\hfill
+	\begin{minipage}[c]{0.5\linewidth}
+	\includegraphics[width=\linewidth]{GenderVsTime.pdf}
+	\caption{Analysis of Time based on Gender}
+	\end{minipage}
+\end{figure}
+\begin{figure}[!htb]
+	\begin{minipage}[c]{0.5\linewidth}
+	\includegraphics[width=\linewidth]{TaskVsTime.pdf}
+	\caption{Analysis of Time based on Task}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[c]{0.5\linewidth}
+	\includegraphics[width=\linewidth]{SessionVsTime.pdf}
+	\caption{Analysis of Time based on Session}
+	\end{minipage}
+\end{figure}
+\textbf{Inference}:\\
+We observe that the means of Time vs Scorer or Gender do not have highly significant difference. Although, Task does have significant difference, we do not take it as a notifiable inference, because the time limits are different for each tasks, with time to complete suturing task being. 20 minutes. Hence, From the summary and the plots we infer that the time taken highly depends on the sessions.\\
+\\
+\FloatBarrier
+\subsection*{3. Performance Analysis With Respect to Number of Sutures Made}
 \textbf{Approach:Linear Model}:\\
 \begin{figure}[!htb]
 	\begin{minipage}[c]{0.5\linewidth}
-	\includegraphics[width=\linewidth]{PerformanceWRTSutures}
+	\includegraphics[width=\linewidth]{PerformanceWRTSutures.pdf}
 	\caption{Performance WRT number of sutures made}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[c]{0.5\linewidth}
-	\includegraphics[width=\linewidth]{PerformanceWRTSutures_bar}
+	\includegraphics[width=\linewidth]{PerformanceWRTSutures_bar.pdf}
 	\caption{Performance WRT number of sutures summed across all subjects}
 	\end{minipage}
 \end{figure}
@@ -190,15 +246,15 @@ To summarize it over all the subjects, we draw the bar plot with values of all s
 When creating the linear model, and performing the analysis, we observe that the number of sutures is highly dependent on sessions .
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{PerformanceWRTSutures_LM}
+	\includegraphics[width=0.8\textwidth]{Suture_Sex_Summary.pdf}
 	\caption{Analysis of Linear Model}
 	\centering
 \end{figure}
-\newpage
 \textbf{Inference}:\\
 The number of sutures made increases with each session, i.e the subjects are performing well.\\
 \\
-\subsection*{3. Analysis of Scorers on Task:}
+\FloatBarrier
+\subsection*{4. Analysis of Scorers on Task:}
 \textbf{Hypothesis}:\\
 $Null Hypothesis : H_0 = $ The mean of scores is same for both the Scorers\\
 $Alternate Hypothesis : H_1 = $ The  mean of scores is different for both the Scorers\\
@@ -206,12 +262,12 @@ $Alternate Hypothesis : H_1 = $ The  mean of scores is different for both the Sc
 \textbf{Approach:Wilcox Test}:\\
 \begin{figure}[!htb]
 	\begin{minipage}[c]{0.5\linewidth}
-	\includegraphics[width=\linewidth]{Cutting_Scores}
+	\includegraphics[width=\linewidth]{Cutting_ScorerVsScore.pdf}
 	\caption{ Cutting Scores}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[c]{0.5\linewidth}
-	\includegraphics[width=\linewidth]{Suturing_Scores}
+	\includegraphics[width=\linewidth]{Suturing_ScorerVsScore.pdf}
 	\caption{Suturing Scores}
 	\end{minipage}
 \end{figure}
@@ -220,18 +276,16 @@ Cutting : When performed Wilcox test, p-value is greater than 0.05, which applie
 Suturing: When performed Wilcox test, p-value is less than 0.05, which states that the means of the scorers is different. \\
 \\
 \textbf{Inference}:\\
-Scorer has an effect for Suturing ,not Cutting\\
-
-\subsection*{4. Analysis of Number of Sutures made with respect to sex and sessions:}
-
+Scorer has an effect for Suturing and Cutting\\
+\FloatBarrier
+\subsection*{5. Analysis of Number of Sutures made with respect to sex and sessions:}
 \textbf{Hypothesis}:\\
 $Null Hypothesis : H_0 = $ The number of sutures made is not significant on sex of the subject\\
 $Alternate Hypothesis : H_1 = $ The number of sutures made is  significant on sex of the subject\\
 \\
-\textbf{Approach:ANOVA}:\\
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{SuturingVsSex}
+	\includegraphics[width=0.8\textwidth]{SuturingVsSex.pdf}
 	\caption{Interaction plot of Number of Sutures made wrt to Sex and Session}
 	\centering
 \end{figure}
@@ -248,7 +302,7 @@ Sex has an effect on Number of Sutures made and females made more number of Sutu
 
 
 \newpage
-\end{comment}
+
 
 \section*{Conclusion}
 \addcontentsline{toc}{section}{Conclusion}
