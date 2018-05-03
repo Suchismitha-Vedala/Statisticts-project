@@ -33,3 +33,5 @@ vignettes/*.pdf
 *.knit.md
 # dont take .R files in data
 FINAL/Data/*.R
+FINAL/Data/*.pdf
+FINAL/Data/*.png
