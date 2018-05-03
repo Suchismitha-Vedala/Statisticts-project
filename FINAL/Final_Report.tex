@@ -309,15 +309,31 @@ Also, from the interaction plot, we understand that the number of sutures made i
 \\
 \textbf{Inference}:\\
 Sex has an effect on Number of Sutures made and females made more number of Sutures in 20 minutes and the number os sutures increases with each session, i.e subject's performance gets better with each session.\\
-
-
-
-
-
-
-\newpage
-
-
+\FloatBarrier
+\subsection*{6. Analysis of Performance With Respect to  TAI}
+\addcontentsline{toc}{subsection}{Tai Score Effect on Performance}
+\textbf{Hypothesis}:\\
+$Null Hypothesis : H_0 = $ The performance score does not depend on tai score\\
+$Alternate Hypothesis : H_1 = $ With increase in tai score, the performance score decreases\\
+\\
+\textbf{Approach:T Test}:\\
+\begin{figure}[!htb]
+	\begin{minipage}[c]{0.5\linewidth}
+	\includegraphics[width=\linewidth]{TaiVsScores.pdf}
+	\caption{ Analysis of Tai Vs Scores}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[c]{0.5\linewidth}
+	\includegraphics[width=\linewidth]{TaiVsScores_Box.pdf}
+	\caption{Analysis of Tai Vs Scores}
+	\end{minipage}
+\end{figure}\\
+Given, In the data, that Tai score above 40 means the subject is highly anxious. When performed T test, between all the values below or equal to 40 and above 40, we observe that the p-value is greater than 0.05, which indicates we accept the null hypothesis.\\
+In addition, from the plots we can infer that the scores are pretty much the same, for both, above and below 40 Tai\\
+\\
+\textbf{Inference}:\\
+With this, we infer that the in general, performance does not depend on how anxious the subject is.
+\FloatBarrier
 \section*{Conclusion}
 \addcontentsline{toc}{section}{Conclusion}
 
@@ -334,7 +350,7 @@ Sex has an effect on Number of Sutures made and females made more number of Sutu
 \subsection*{1. State Psychometric Data of all Subjects}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.7\textwidth]{multiplot_state_psycho.pdf}
+	\includegraphics[width=0.6\textwidth]{multiplot_state_psycho.pdf}
 	\caption{State Psychometric Data of all Subjects}
 	\centering
 \end{figure}
@@ -342,7 +358,7 @@ Sex has an effect on Number of Sutures made and females made more number of Sutu
 \subsection*{2. Perinasal Perspiration (Stress) Signal Data of all subjects}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.7\textwidth]{multiplot_perinasal_percep.pdf}
+	\includegraphics[width=0.6\textwidth]{multiplot_perinasal_percep.pdf}
 	\caption{Perinasal Perspiration (Stress) Signal Data of all subjects}
 	\centering
 \end{figure}
@@ -350,7 +366,7 @@ Sex has an effect on Number of Sutures made and females made more number of Sutu
 \subsection*{3. Suturing Time Performance of all Subjects}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.7\textwidth]{multiplot_task_time.pdf}
+	\includegraphics[width=0.6\textwidth]{multiplot_task_time.pdf}
 	\caption{ Suturing Time Performance of all Subjects}
 	\centering
 \end{figure}
@@ -358,12 +374,41 @@ Sex has an effect on Number of Sutures made and females made more number of Sutu
 \subsection*{4.Accuracy of Scores of all subjects}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.7\textwidth]{multiplot_scorer.pdf}
+	\includegraphics[width=0.6\textwidth]{multiplot_scorer.pdf}
 	\caption{Accuracy of Scores of all subjects}
 	\centering
 \end{figure}
-
-
+\FloatBarrier
+\subsection*{5.Matrix Visualization of Plots of Data based on Task}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Data_GGpairs.pdf}
+	\caption{Accuracy of Scores of all subjects}
+	\centering
+\end{figure}
+\FloatBarrier
+\subsection*{6.Matrix Visualization of Plots of Cutting Data based on scorer}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Cutting_GGpairs.pdf}
+	\caption{Accuracy of Scores of all subjects}
+	\centering
+\end{figure}
+\FloatBarrier
+\subsection*{7.Matrix Visualization of Plots of Suturing Data based on scorer}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Suturing_GGpairs.pdf}
+	\caption{Accuracy of Scores of all subjects}
+	\centering
+\end{figure}
+\subsection*{8.Analysis of Mean Perspiration Based on Subject}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.6\textwidth]{SubjectVsPP.pdf}
+	\caption{Accuracy of Mean Perspiration of all subjects}
+	\centering
+\end{figure}
 %-------------------------------------------------------------------------------
 % REFERENCES
 %-------------------------------------------------------------------------------

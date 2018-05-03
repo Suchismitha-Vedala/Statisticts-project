@@ -9,10 +9,11 @@
 \contentsline {section}{Hypothesis Testing}{7}
 \contentsline {subsection}{Analysis of effect of each attribute on Score}{7}
 \contentsline {subsection}{Analysis of effect of each attribute on Time}{10}
-\contentsline {subsection}{Performance Analysis of Suturing Task}{12}
+\contentsline {subsection}{Performance Analysis of Suturing Task}{11}
 \contentsline {subsection}{Analysis of Scorers on Task}{13}
 \contentsline {subsection}{Analysis of Number of Sutures made wrt. sex and sessions}{14}
+\contentsline {subsection}{Tai Score Effect on Performance}{15}
 \contentsline {section}{Conclusion}{16}
 \contentsline {section}{Appendix}{17}
 \contentsline {subsection}{List of Figures}{17}
-\contentsline {section}{References}{20}
+\contentsline {section}{References}{21}
