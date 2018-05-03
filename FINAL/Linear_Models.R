@@ -251,9 +251,23 @@ p19=ggplot(data,aes(Tai,Scores,fill=Task)) +
   geom_bar(stat="identity", position = "dodge") +theme(plot.title=element_text(hjust = 0.5))+ ggtitle("Performance Analysis of Tai")+labs(x="Tai Score",y="Scores")
 ggsave(filename="Plot/TaiVsScores.pdf",plot=p19)
 
-summary(lm(Tai~Scores,data=data))
-t.test(data$Tai,data$Scores)
 
 d1=data
-d2=split(d1,d1$Tai>40)
+d2=d1[d1$Tai>40,]
+d3=d1[d1$Tai<=40,]
+Score_below=d3$Scores
+Score_Above=d2$Scores
+t1=rep("Less than 40",140)
+t2=rep("Greater than 40",140)
+TAI=append(t1,t2)
+Score=append(Score_below[1:140],Score_Above)
+nd1=data.frame(TAI,Score)
 
+p20 = ggplot(nd1, aes(x=TAI,y=Score,fill=TAI))  + theme(plot.title = element_text(hjust = 0.5)) +  
+  geom_boxplot()+ggtitle("Analysis of Tai Vs Score") +labs(x="Tai",y="Score")
+ggsave(filename="Plot/TaiVsScores_Box.pdf", plot=p20)
+
+
+
+
+t.test(Score_below,Score_Above)
