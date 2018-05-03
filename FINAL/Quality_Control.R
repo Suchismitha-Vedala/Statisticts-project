@@ -141,17 +141,18 @@ for (i in  c(1,2,3,4,5,6,7,8,9, 10,11, 12, 13,19, 20, 21,22,23,24,25,26)){
   temp=read.csv(path,header=TRUE)
   v1=as.numeric(str_extract(colnames(temp)[2], "\\-*\\d+\\.*\\d*"))
   tai=append(tai,v1)
+  tai <- as.data.frame(tai)
   
 }
 
-tai_plot = qplot((tai),
-                 geom="histogram",
-                 binwidth = 5, 
-                 main = "Histogram for Tai Scores", 
-                 xlab = "Tai Scores",
-                 xlim=c(20,80),
-                 fill=I("tomato"))
-savePlot(tai_plot, "Plot/tai_plot.pdf")
+
+int_breaks <- function(x, n = 5) pretty(x, n)[pretty(x, n) %% 1 == 0] 
+tai_plot <- ggplot() + geom_histogram(aes(tai$tai), binwidth = 5, fill="#3366FF") +  ggtitle("Histogram for Tai Scores") +scale_y_continuous(breaks= int_breaks) + xlab("Tai Scores") +xlim(20,80) + theme(plot.title = element_text(hjust = 0.5), legend.position="none")
+
+
+pdf("Plot/tai_plot.pdf") 
+print(tai_plot)
+dev.off()
 
 
 
