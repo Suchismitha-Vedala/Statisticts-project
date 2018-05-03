@@ -167,23 +167,23 @@ State.Pyschometric.Data <- function(){
     #added new by yash
     cutNASA <- melt(cutNASA, id.vars='Response')
     cutNASA$action <- "Cutting"
-      
+    
     sutNASA <- melt(sutNASA, id.vars='Response')
     sutNASA$action <- "Suturing"
     
     t <- rbind(cutNASA, sutNASA)
     ttl <- paste("Subject ",ttl)
-    q <- ggplot(t, aes(Response, as.integer(value))) + ylim(0,20) +
+    q <- ggplot(t, aes(Response, as.integer(value))) + ylim(0,20) + theme_light() +
       geom_bar(aes(fill = factor(variable)), position = "dodge", stat="identity")  + ylab("Scores") + theme(legend.position = "bottom") +
-      theme(plot.title = element_text(hjust = 0.5)) #+ ggtitle(paste(ttl, "State Psychometric Data of Cutting and Suturing")) + scale_fill_manual(name="Sessions",values=group.colors) 
+      theme(plot.title = element_text(hjust = 0.5)) + ggtitle(paste(ttl, "State Psychometric Data of Cutting and Suturing")) + scale_fill_manual(name="Sessions",values=group.colors) 
     q <- q + facet_grid(action ~ .)
     
     
     plots[[i]] <- q
     
-    #pdf(paste(path,"State_Psychometric_Data_of_Cutting_and_Suturing.pdf",sep="_"))
-    #print(q)
-    #dev.off()
+    pdf(paste(path,"State_Psychometric_Data_of_Cutting_and_Suturing.pdf",sep="_"))
+    print(q)
+    dev.off()
     
   }
   
@@ -201,6 +201,7 @@ State.Pyschometric.Data()
 Perinasal.Perspiration <- function(){
   group.colors <- c(Baseline="#000000",Cutting="#00FF00",Suturing="#FF0000")
   for(i in v){
+    i =1
     path = paste("subject", formatC(i, width=2, flag="0"), sep="")  
     print(path)
     
@@ -283,7 +284,7 @@ Perinasal.Perspiration <- function(){
     
     title<-paste("Perinasal Perspiration (Stress) Signal for Subject ",1)
     p <- ggplot(data, aes(x=Time, y= Perspiration, col=factor(task))) + geom_line()
-    p <- p +  xlab("Time[S]") +
+    p <- p +  xlab("Time[S]") + theme_light() +
       ylab(expression(paste("Perinasal Perspiration"))) +
       geom_line() +
       ggtitle(title) + theme(legend.position = "bottom") +
@@ -307,7 +308,7 @@ Perinasal.Perspiration()
 ### Read the data
 
 parse<-function(x,npar=TRUE,print=TRUE){
-
+  
   s <- strsplit(as.character(x) , ":")
   if (length(s) > 1) {
     min<-sapply(s,"[",1)
@@ -416,7 +417,7 @@ for (i in 1:15) {
   title <- paste("Time Barplot for Subject ", i)
   q <- melt(t, id=c("ID","session","Score2Sut","Score2Cut","Score1Sut","Score1Cut"))
   p <- ggplot(q, aes(session,value, goup=variable , fill=variable)) +  geom_bar(stat="identity",position = "dodge")
-  p <- p +  xlab("Sessions") +
+  p <- p +  xlab("Sessions") + theme_light() +
     ylab("Time[secs]") +
     ggtitle(title) + theme(plot.title = element_text(hjust = 0.5)) + theme(legend.position = "bottom") +
     scale_fill_discrete(name = "Task", labels = c("Cutting", "Suturing")) 
@@ -437,7 +438,7 @@ for (i in 1:15) {
   r <- rbind(r,q)
   r$variable <- substr(r$variable,7,9)
   u <- ggplot(r, aes(session,value, goup=variable , fill=variable)) +  geom_bar(stat="identity",position = "dodge") + xlab("Sessions") +
-    ylab("Score") + theme(legend.position = "bottom") + 
+    ylab("Score") + theme_light() + theme(legend.position = "bottom") + 
     ggtitle(title) + theme(plot.title = element_text(hjust = 0.5)) +
     scale_fill_discrete(name = "Task", labels = c("Cutting", "Suturing"))
   u <- u + facet_grid(scorer~.)
@@ -448,6 +449,3 @@ for (i in 1:15) {
   print(u)
   dev.off()
 }
-
-
-
