@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  3 MAY 2018 06:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  3 MAY 2018 18:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -596,20 +596,7 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 51.
 
-(./Final_Report.toc
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 2.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 2.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 2.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 2.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 2.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 2.
-)
+(./Final_Report.toc)
 \tf@toc=\write3
 \openout3 = `Final_Report.toc'.
 
@@ -617,112 +604,198 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 
 ]
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 63.
-LaTeX Font Info:    Font shape `T1/futs/bx/sc' in size <17.28> not available
-(Font)              Font shape `T1/futs/b/sc' tried instead on input line 63.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 53.
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 54.
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 65--73
+Underfull \hbox (badness 10000) in paragraph at lines 55--60
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--73
+Underfull \hbox (badness 10000) in paragraph at lines 61--63
 
  []
+
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 64.
+
+LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 64.
 
 [2]
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 77.
- <plot/1_gender.pdf, id=14, 505.89pt x 505.89pt>
+LaTeX Font Info:    Font shape `T1/futs/bx/sc' in size <17.28> not available
+(Font)              Font shape `T1/futs/b/sc' tried instead on input line 75.
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--110
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--110
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--110
+
+ []
+
+
+LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 110.
+
+[3] <plot/New_data.pdf, id=17, 731.11095pt x 190.27187pt>
+File: plot/New_data.pdf Graphic file (type pdf)
+
+<use plot/New_data.pdf>
+Package pdftex.def Info: plot/New_data.pdf used on input line 128.
+(pdftex.def)             Requested size: 516.73338pt x 134.48717pt.
+
+Overfull \hbox (46.97836pt too wide) in paragraph at lines 128--129
+[][] 
+ []
+
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 129.
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--131
+
+ []
+
+
+Overfull \hbox (15.0059pt too wide) in paragraph at lines 112--131
+\T1/futs/m/n/12 (-20) 6.We now nor-mal-ize the Mean_Perspiration val-ues, by ta
+k-ing the ab-so-lute min-i-mum value(excluding
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--131
+
+ []
+
+
+LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 131.
+
+[4]
+
+LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 131.
+
+[5 <./plot/New_data.pdf, page is rotated 90 degrees>]
+<plot/1_gender.pdf, id=33, 505.89pt x 505.89pt>
 File: plot/1_gender.pdf Graphic file (type pdf)
  <use plot/1_gender.pdf>
-Package pdftex.def Info: plot/1_gender.pdf used on input line 82.
+Package pdftex.def Info: plot/1_gender.pdf used on input line 139.
 (pdftex.def)             Requested size: 234.8775pt x 234.88132pt.
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 83.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 11.03998pt on input line 141.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 8.27998pt on input line 141.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 6.43999pt on input line 141.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 11.03998pt on input line 141.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 8.27998pt on input line 141.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 6.43999pt on input line 141.
 
-<plot/1_age.pdf, id=15, 505.89pt x 505.89pt>
+<plot/1_age.pdf, id=34, 505.89pt x 505.89pt>
 File: plot/1_age.pdf Graphic file (type pdf)
  <use plot/1_age.pdf>
-Package pdftex.def Info: plot/1_age.pdf used on input line 87.
+Package pdftex.def Info: plot/1_age.pdf used on input line 144.
 (pdftex.def)             Requested size: 234.8775pt x 234.88132pt.
 
-Overfull \hbox (1.88399pt too wide) in paragraph at lines 81--90
+Overfull \hbox (1.88399pt too wide) in paragraph at lines 138--147
 []$[]$  $[]$ 
  []
 
-<plot/tai_plot.pdf, id=16, 505.89pt x 505.89pt>
+<plot/tai_plot.pdf, id=35, 505.89pt x 505.89pt>
 File: plot/tai_plot.pdf Graphic file (type pdf)
  <use plot/tai_plot.pdf>
-Package pdftex.def Info: plot/tai_plot.pdf used on input line 97.
+Package pdftex.def Info: plot/tai_plot.pdf used on input line 154.
 (pdftex.def)             Requested size: 234.8775pt x 234.88132pt.
 
-[3 <./plot/1_gender.pdf> <./plot/1_age.pdf>]
-<plot/subject01_State_Psychometric_Data_of_Cutting_and_Suturing.pdf, id=30, 505
+
+LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 158.
+
+[6 <./plot/1_gender.pdf> <./plot/1_age.pdf>]
+<plot/subject01_State_Psychometric_Data_of_Cutting_and_Suturing.pdf, id=50, 505
 .89pt x 505.89pt>
 File: plot/subject01_State_Psychometric_Data_of_Cutting_and_Suturing.pdf Graphi
 c file (type pdf)
 
 <use plot/subject01_State_Psychometric_Data_of_Cutting_and_Suturing.pdf>
 Package pdftex.def Info: plot/subject01_State_Psychometric_Data_of_Cutting_and_
-Suturing.pdf used on input line 107.
+Suturing.pdf used on input line 164.
 (pdftex.def)             Requested size: 234.8775pt x 234.88132pt.
 
-<plot/subject02_State_Psychometric_Data_of_Cutting_and_Suturing.pdf, id=31, 505
+<plot/subject02_State_Psychometric_Data_of_Cutting_and_Suturing.pdf, id=51, 505
 .89pt x 505.89pt>
 File: plot/subject02_State_Psychometric_Data_of_Cutting_and_Suturing.pdf Graphi
 c file (type pdf)
 
 <use plot/subject02_State_Psychometric_Data_of_Cutting_and_Suturing.pdf>
 Package pdftex.def Info: plot/subject02_State_Psychometric_Data_of_Cutting_and_
-Suturing.pdf used on input line 112.
+Suturing.pdf used on input line 169.
 (pdftex.def)             Requested size: 234.8775pt x 234.88132pt.
 
-Overfull \hbox (1.88399pt too wide) in paragraph at lines 106--115
+Overfull \hbox (1.88399pt too wide) in paragraph at lines 163--172
 []$[]$  $[]$ 
  []
 
-<plot/01_Perinasal_Perspiration.pdf, id=32, 505.89pt x 505.89pt>
+<plot/01_Perinasal_Perspiration.pdf, id=52, 505.89pt x 505.89pt>
 File: plot/01_Perinasal_Perspiration.pdf Graphic file (type pdf)
 
 <use plot/01_Perinasal_Perspiration.pdf>
 Package pdftex.def Info: plot/01_Perinasal_Perspiration.pdf used on input line 
-122.
+179.
 (pdftex.def)             Requested size: 234.8775pt x 234.88132pt.
 
-<plot/02_Perinasal_Perspiration.pdf, id=33, 505.89pt x 505.89pt>
+<plot/02_Perinasal_Perspiration.pdf, id=53, 505.89pt x 505.89pt>
 File: plot/02_Perinasal_Perspiration.pdf Graphic file (type pdf)
 
 <use plot/02_Perinasal_Perspiration.pdf>
 Package pdftex.def Info: plot/02_Perinasal_Perspiration.pdf used on input line 
-127.
+184.
 (pdftex.def)             Requested size: 234.8775pt x 234.88132pt.
 
-Overfull \hbox (1.88399pt too wide) in paragraph at lines 121--130
+Overfull \hbox (1.88399pt too wide) in paragraph at lines 178--187
 []$[]$  $[]$ 
  []
 
-[4 <./plot/tai_plot.pdf>]
-<plot/1_Score_barplot.pdf, id=42, 505.89pt x 505.89pt>
+
+LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 188.
+
+[7 <./plot/tai_plot.pdf>]
+<plot/1_Score_barplot.pdf, id=62, 505.89pt x 505.89pt>
 File: plot/1_Score_barplot.pdf Graphic file (type pdf)
 
 <use plot/1_Score_barplot.pdf>
-Package pdftex.def Info: plot/1_Score_barplot.pdf used on input line 137.
+Package pdftex.def Info: plot/1_Score_barplot.pdf used on input line 194.
 (pdftex.def)             Requested size: 234.8775pt x 234.88132pt.
 
-<plot/1_Time_barplot.pdf, id=43, 505.89pt x 505.89pt>
+<plot/1_Time_barplot.pdf, id=63, 505.89pt x 505.89pt>
 File: plot/1_Time_barplot.pdf Graphic file (type pdf)
 
 <use plot/1_Time_barplot.pdf>
-Package pdftex.def Info: plot/1_Time_barplot.pdf used on input line 144.
+Package pdftex.def Info: plot/1_Time_barplot.pdf used on input line 201.
 (pdftex.def)             Requested size: 234.8775pt x 234.88132pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--148
+Underfull \hbox (badness 10000) in paragraph at lines 191--205
 
  []
 
@@ -730,348 +803,413 @@ Underfull \hbox (badness 10000) in paragraph at lines 134--148
 Overfull \vbox (13.4415pt too high) has occurred while \output is active []
 
 
-[5 <./plot/subject01_State_Psychometric_Data_of_Cutting_and_Suturing.pdf> <./pl
-ot/subject02_State_Psychometric_Data_of_Cutting_and_Suturing.pdf> <./plot/01_Pe
-rinasal_Perspiration.pdf> <./plot/02_Perinasal_Perspiration.pdf>] [6 <./plot/1_
-Score_barplot.pdf> <./plot/1_Time_barplot.pdf>]
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 153.
 
+LaTeX Warning: Reference `LastPage' on page 8 undefined on input line 205.
+
+[8 <./plot/subject01_State_Psychometric_Data_of_Cutting_and_Suturing.pdf> <./pl
+ot/subject02_State_Psychometric_Data_of_Cutting_and_Suturing.pdf> <./plot/01_Pe
+rinasal_Perspiration.pdf> <./plot/02_Perinasal_Perspiration.pdf>]
+
+LaTeX Warning: Reference `LastPage' on page 9 undefined on input line 205.
+
+[9 <./plot/1_Score_barplot.pdf> <./plot/1_Time_barplot.pdf>]
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./plot/ScoreSummary.pdf): PD
 F inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<plot/ScoreSummary.pdf, id=81, 550.56845pt x 484.86746pt>
+<plot/ScoreSummary.pdf, id=100, 550.56845pt x 484.86746pt>
 File: plot/ScoreSummary.pdf Graphic file (type pdf)
 
 <use plot/ScoreSummary.pdf>
-Package pdftex.def Info: plot/ScoreSummary.pdf used on input line 162.
+Package pdftex.def Info: plot/ScoreSummary.pdf used on input line 219.
 (pdftex.def)             Requested size: 234.8775pt x 206.84648pt.
 
-<plot/ScorerVsScore.pdf, id=82, 396.48125pt x 264.99pt>
+<plot/ScorerVsScore.pdf, id=101, 396.48125pt x 264.99pt>
 File: plot/ScorerVsScore.pdf Graphic file (type pdf)
 
 <use plot/ScorerVsScore.pdf>
-Package pdftex.def Info: plot/ScorerVsScore.pdf used on input line 169.
+Package pdftex.def Info: plot/ScorerVsScore.pdf used on input line 226.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-<plot/GenderVsScore.pdf, id=83, 396.48125pt x 264.99pt>
+<plot/GenderVsScore.pdf, id=102, 396.48125pt x 264.99pt>
 File: plot/GenderVsScore.pdf Graphic file (type pdf)
 
 <use plot/GenderVsScore.pdf>
-Package pdftex.def Info: plot/GenderVsScore.pdf used on input line 174.
+Package pdftex.def Info: plot/GenderVsScore.pdf used on input line 231.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-Overfull \hbox (1.88399pt too wide) in paragraph at lines 168--177
+Overfull \hbox (1.88399pt too wide) in paragraph at lines 225--234
 []$[]$  $[]$ 
  []
 
-<plot/TaskVsScore.pdf, id=84, 396.48125pt x 264.99pt>
+<plot/TaskVsScore.pdf, id=103, 396.48125pt x 264.99pt>
 File: plot/TaskVsScore.pdf Graphic file (type pdf)
 
 <use plot/TaskVsScore.pdf>
-Package pdftex.def Info: plot/TaskVsScore.pdf used on input line 180.
+Package pdftex.def Info: plot/TaskVsScore.pdf used on input line 237.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-<plot/SessionVsScore.pdf, id=85, 396.48125pt x 264.99pt>
+<plot/SessionVsScore.pdf, id=104, 396.48125pt x 264.99pt>
 File: plot/SessionVsScore.pdf Graphic file (type pdf)
 
 <use plot/SessionVsScore.pdf>
-Package pdftex.def Info: plot/SessionVsScore.pdf used on input line 185.
+Package pdftex.def Info: plot/SessionVsScore.pdf used on input line 242.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-Overfull \hbox (1.88399pt too wide) in paragraph at lines 179--188
+Overfull \hbox (1.88399pt too wide) in paragraph at lines 236--245
 []$[]$  $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--192
+Underfull \hbox (badness 10000) in paragraph at lines 210--249
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--192
+Underfull \hbox (badness 10000) in paragraph at lines 210--249
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--192
+Underfull \hbox (badness 10000) in paragraph at lines 210--249
 
  []
 
-[7] [8 <./plot/ScoreSummary.pdf> <./plot/ScorerVsScore.pdf> <./plot/GenderVsSco
-re.pdf>] [9 <./plot/TaskVsScore.pdf> <./plot/SessionVsScore.pdf>]
-<plot/TimeSummary.pdf, id=139, 592.6169pt x 487.49626pt>
+
+LaTeX Warning: Reference `LastPage' on page 10 undefined on input line 249.
+
+[10]
+
+LaTeX Warning: Reference `LastPage' on page 11 undefined on input line 249.
+
+[11 <./plot/ScoreSummary.pdf> <./plot/ScorerVsScore.pdf> <./plot/GenderVsScore.
+pdf>]
+
+LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 249.
+
+[12 <./plot/TaskVsScore.pdf> <./plot/SessionVsScore.pdf>]
+<plot/TimeSummary.pdf, id=162, 592.6169pt x 487.49626pt>
 File: plot/TimeSummary.pdf Graphic file (type pdf)
 
 <use plot/TimeSummary.pdf>
-Package pdftex.def Info: plot/TimeSummary.pdf used on input line 204.
+Package pdftex.def Info: plot/TimeSummary.pdf used on input line 261.
 (pdftex.def)             Requested size: 234.8775pt x 193.20978pt.
 
-<plot/ScorerVsTime.pdf, id=140, 396.48125pt x 264.99pt>
+<plot/ScorerVsTime.pdf, id=163, 396.48125pt x 264.99pt>
 File: plot/ScorerVsTime.pdf Graphic file (type pdf)
 
 <use plot/ScorerVsTime.pdf>
-Package pdftex.def Info: plot/ScorerVsTime.pdf used on input line 211.
+Package pdftex.def Info: plot/ScorerVsTime.pdf used on input line 268.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-<plot/GenderVsTime.pdf, id=141, 396.48125pt x 264.99pt>
+<plot/GenderVsTime.pdf, id=164, 396.48125pt x 264.99pt>
 File: plot/GenderVsTime.pdf Graphic file (type pdf)
 
 <use plot/GenderVsTime.pdf>
-Package pdftex.def Info: plot/GenderVsTime.pdf used on input line 216.
+Package pdftex.def Info: plot/GenderVsTime.pdf used on input line 273.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-Overfull \hbox (1.88399pt too wide) in paragraph at lines 210--219
+Overfull \hbox (1.88399pt too wide) in paragraph at lines 267--276
 []$[]$  $[]$ 
  []
 
-<plot/TaskVsTime.pdf, id=142, 396.48125pt x 264.99pt>
+<plot/TaskVsTime.pdf, id=165, 396.48125pt x 264.99pt>
 File: plot/TaskVsTime.pdf Graphic file (type pdf)
 
 <use plot/TaskVsTime.pdf>
-Package pdftex.def Info: plot/TaskVsTime.pdf used on input line 222.
+Package pdftex.def Info: plot/TaskVsTime.pdf used on input line 279.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-<plot/SessionVsTime.pdf, id=143, 396.48125pt x 264.99pt>
+<plot/SessionVsTime.pdf, id=166, 396.48125pt x 264.99pt>
 File: plot/SessionVsTime.pdf Graphic file (type pdf)
 
 <use plot/SessionVsTime.pdf>
-Package pdftex.def Info: plot/SessionVsTime.pdf used on input line 227.
+Package pdftex.def Info: plot/SessionVsTime.pdf used on input line 284.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-Overfull \hbox (1.88399pt too wide) in paragraph at lines 221--230
+Overfull \hbox (1.88399pt too wide) in paragraph at lines 278--287
 []$[]$  $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--234
+Underfull \hbox (badness 10000) in paragraph at lines 252--291
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--234
+Underfull \hbox (badness 10000) in paragraph at lines 252--291
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--234
+Underfull \hbox (badness 10000) in paragraph at lines 252--291
 
  []
 
-[10
+
+LaTeX Warning: Reference `LastPage' on page 13 undefined on input line 291.
+
+[13
 
  <./plot/TimeSummary.pdf>]
-<plot/PerformanceWRTSutures.pdf, id=156, 396.48125pt x 264.99pt>
+<plot/PerformanceWRTSutures.pdf, id=179, 396.48125pt x 264.99pt>
 File: plot/PerformanceWRTSutures.pdf Graphic file (type pdf)
 
 <use plot/PerformanceWRTSutures.pdf>
-Package pdftex.def Info: plot/PerformanceWRTSutures.pdf used on input line 240.
+Package pdftex.def Info: plot/PerformanceWRTSutures.pdf used on input line 297.
 
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-<plot/PerformanceWRTSutures_bar.pdf, id=157, 396.48125pt x 264.99pt>
+<plot/PerformanceWRTSutures_bar.pdf, id=180, 396.48125pt x 264.99pt>
 File: plot/PerformanceWRTSutures_bar.pdf Graphic file (type pdf)
 
 <use plot/PerformanceWRTSutures_bar.pdf>
 Package pdftex.def Info: plot/PerformanceWRTSutures_bar.pdf used on input line 
-245.
+302.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-Overfull \hbox (1.88399pt too wide) in paragraph at lines 239--248
+Overfull \hbox (1.88399pt too wide) in paragraph at lines 296--305
 []$[]$  $[]$ 
  []
 
-<plot/Suture_Sex_Summary.pdf, id=158, 547.9409pt x 530.85828pt>
+<plot/Suture_Sex_Summary.pdf, id=181, 547.9409pt x 530.85828pt>
 File: plot/Suture_Sex_Summary.pdf Graphic file (type pdf)
 
 <use plot/Suture_Sex_Summary.pdf>
-Package pdftex.def Info: plot/Suture_Sex_Summary.pdf used on input line 251.
+Package pdftex.def Info: plot/Suture_Sex_Summary.pdf used on input line 308.
 (pdftex.def)             Requested size: 234.8775pt x 227.55179pt.
 
-<plot/SuturingVsTime.pdf, id=159, 396.48125pt x 264.99pt>
+<plot/SuturingVsTime.pdf, id=182, 396.48125pt x 264.99pt>
 File: plot/SuturingVsTime.pdf Graphic file (type pdf)
 
 <use plot/SuturingVsTime.pdf>
-Package pdftex.def Info: plot/SuturingVsTime.pdf used on input line 257.
+Package pdftex.def Info: plot/SuturingVsTime.pdf used on input line 314.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--268
+Underfull \hbox (badness 10000) in paragraph at lines 294--325
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--268
+Underfull \hbox (badness 10000) in paragraph at lines 294--325
 
  []
 
-[11 <./plot/ScorerVsTime.pdf> <./plot/GenderVsTime.pdf> <./plot/TaskVsTime.pdf>
- <./plot/SessionVsTime.pdf>] [12 <./plot/PerformanceWRTSutures.pdf> <./plot/Per
-formanceWRTSutures_bar.pdf> <./plot/Suture_Sex_Summary.pdf>]
-<plot/Cutting_ScorerVsScore.pdf, id=214, 396.48125pt x 264.99pt>
+
+LaTeX Warning: Reference `LastPage' on page 14 undefined on input line 325.
+
+[14 <./plot/ScorerVsTime.pdf> <./plot/GenderVsTime.pdf> <./plot/TaskVsTime.pdf>
+ <./plot/SessionVsTime.pdf>]
+
+LaTeX Warning: Reference `LastPage' on page 15 undefined on input line 325.
+
+[15 <./plot/PerformanceWRTSutures.pdf> <./plot/PerformanceWRTSutures_bar.pdf> <
+./plot/Suture_Sex_Summary.pdf>]
+<plot/Cutting_ScorerVsScore.pdf, id=238, 396.48125pt x 264.99pt>
 File: plot/Cutting_ScorerVsScore.pdf Graphic file (type pdf)
 
 <use plot/Cutting_ScorerVsScore.pdf>
-Package pdftex.def Info: plot/Cutting_ScorerVsScore.pdf used on input line 278.
+Package pdftex.def Info: plot/Cutting_ScorerVsScore.pdf used on input line 335.
 
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-<plot/Suturing_ScorerVsScore.pdf, id=215, 396.48125pt x 264.99pt>
+<plot/Suturing_ScorerVsScore.pdf, id=239, 396.48125pt x 264.99pt>
 File: plot/Suturing_ScorerVsScore.pdf Graphic file (type pdf)
 
 <use plot/Suturing_ScorerVsScore.pdf>
-Package pdftex.def Info: plot/Suturing_ScorerVsScore.pdf used on input line 283
+Package pdftex.def Info: plot/Suturing_ScorerVsScore.pdf used on input line 340
 .
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-Overfull \hbox (1.88399pt too wide) in paragraph at lines 277--286
+Overfull \hbox (1.88399pt too wide) in paragraph at lines 334--343
 []$[]$  $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 271--293
+Underfull \hbox (badness 10000) in paragraph at lines 328--350
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 271--293
+Underfull \hbox (badness 10000) in paragraph at lines 328--350
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 271--293
+Underfull \hbox (badness 10000) in paragraph at lines 328--350
 
  []
 
-[13 <./plot/SuturingVsTime.pdf>]
-<plot/SuturingVsSex.pdf, id=228, 396.48125pt x 264.99pt>
+
+LaTeX Warning: Reference `LastPage' on page 16 undefined on input line 350.
+
+[16 <./plot/SuturingVsTime.pdf>]
+<plot/SuturingVsSex.pdf, id=252, 396.48125pt x 264.99pt>
 File: plot/SuturingVsSex.pdf Graphic file (type pdf)
 
 <use plot/SuturingVsSex.pdf>
-Package pdftex.def Info: plot/SuturingVsSex.pdf used on input line 302.
+Package pdftex.def Info: plot/SuturingVsSex.pdf used on input line 359.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 296--312
+Underfull \hbox (badness 10000) in paragraph at lines 353--369
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 296--312
+Underfull \hbox (badness 10000) in paragraph at lines 353--369
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 296--312
+Underfull \hbox (badness 10000) in paragraph at lines 353--369
 
  []
 
-[14 <./plot/Cutting_ScorerVsScore.pdf> <./plot/Suturing_ScorerVsScore.pdf> <./p
-lot/SuturingVsSex.pdf>] <plot/TaiVsScores.pdf, id=253, 396.48125pt x 264.99pt>
+
+LaTeX Warning: Reference `LastPage' on page 17 undefined on input line 369.
+
+[17 <./plot/Cutting_ScorerVsScore.pdf> <./plot/Suturing_ScorerVsScore.pdf> <./p
+lot/SuturingVsSex.pdf>] <plot/TaiVsScores.pdf, id=278, 396.48125pt x 264.99pt>
 File: plot/TaiVsScores.pdf Graphic file (type pdf)
 
 <use plot/TaiVsScores.pdf>
-Package pdftex.def Info: plot/TaiVsScores.pdf used on input line 322.
+Package pdftex.def Info: plot/TaiVsScores.pdf used on input line 379.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-<plot/TaiVsScores_Box.pdf, id=254, 396.48125pt x 264.99pt>
+<plot/TaiVsScores_Box.pdf, id=279, 396.48125pt x 264.99pt>
 File: plot/TaiVsScores_Box.pdf Graphic file (type pdf)
 
 <use plot/TaiVsScores_Box.pdf>
-Package pdftex.def Info: plot/TaiVsScores_Box.pdf used on input line 327.
+Package pdftex.def Info: plot/TaiVsScores_Box.pdf used on input line 384.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-Overfull \hbox (1.88399pt too wide) in paragraph at lines 321--330
+Overfull \hbox (1.88399pt too wide) in paragraph at lines 378--387
 []$[]$  $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 315--336
+Underfull \hbox (badness 10000) in paragraph at lines 372--393
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 315--336
+Underfull \hbox (badness 10000) in paragraph at lines 372--393
 
  []
 
-[15 <./plot/TaiVsScores.pdf> <./plot/TaiVsScores_Box.pdf>] [16]
-<plot/multiplot_state_psycho.pdf, id=271, 794.97pt x 614.295pt>
+
+LaTeX Warning: Reference `LastPage' on page 18 undefined on input line 393.
+
+[18 <./plot/TaiVsScores.pdf> <./plot/TaiVsScores_Box.pdf>]
+
+LaTeX Warning: Reference `LastPage' on page 19 undefined on input line 402.
+
+[19] <plot/multiplot_state_psycho.pdf, id=298, 794.97pt x 614.295pt>
 File: plot/multiplot_state_psycho.pdf Graphic file (type pdf)
 
 <use plot/multiplot_state_psycho.pdf>
-Package pdftex.def Info: plot/multiplot_state_psycho.pdf used on input line 353
+Package pdftex.def Info: plot/multiplot_state_psycho.pdf used on input line 410
 .
 (pdftex.def)             Requested size: 281.85587pt x 217.79973pt.
 
-<plot/multiplot_perinasal_percep.pdf, id=272, 794.97pt x 614.295pt>
+<plot/multiplot_perinasal_percep.pdf, id=299, 794.97pt x 614.295pt>
 File: plot/multiplot_perinasal_percep.pdf Graphic file (type pdf)
 
 <use plot/multiplot_perinasal_percep.pdf>
 Package pdftex.def Info: plot/multiplot_perinasal_percep.pdf used on input line
- 361.
+ 418.
 (pdftex.def)             Requested size: 281.85587pt x 217.79973pt.
- [17 <./plot/multiplot_state_psycho.pdf>] <plot/multiplot_task_time.pdf, id=281
-, 794.97pt x 614.295pt>
+
+
+LaTeX Warning: Reference `LastPage' on page 20 undefined on input line 422.
+
+[20 <./plot/multiplot_state_psycho.pdf>]
+<plot/multiplot_task_time.pdf, id=309, 794.97pt x 614.295pt>
 File: plot/multiplot_task_time.pdf Graphic file (type pdf)
 
 <use plot/multiplot_task_time.pdf>
-Package pdftex.def Info: plot/multiplot_task_time.pdf used on input line 369.
+Package pdftex.def Info: plot/multiplot_task_time.pdf used on input line 426.
 (pdftex.def)             Requested size: 281.85587pt x 217.79973pt.
 
-<plot/multiplot_scorer.pdf, id=282, 794.97pt x 614.295pt>
+<plot/multiplot_scorer.pdf, id=310, 794.97pt x 614.295pt>
 File: plot/multiplot_scorer.pdf Graphic file (type pdf)
 
 <use plot/multiplot_scorer.pdf>
-Package pdftex.def Info: plot/multiplot_scorer.pdf used on input line 377.
+Package pdftex.def Info: plot/multiplot_scorer.pdf used on input line 434.
 (pdftex.def)             Requested size: 281.85587pt x 217.79973pt.
- [18 <./plot/multiplot_perinasal_percep.pdf> <./plot/multiplot_task_time.pdf>]
-<plot/Data_GGpairs.pdf, id=297, 396.48125pt x 264.99pt>
+
+
+LaTeX Warning: Reference `LastPage' on page 21 undefined on input line 437.
+
+[21 <./plot/multiplot_perinasal_percep.pdf> <./plot/multiplot_task_time.pdf>]
+<plot/Data_GGpairs.pdf, id=324, 396.48125pt x 264.99pt>
 File: plot/Data_GGpairs.pdf Graphic file (type pdf)
 
 <use plot/Data_GGpairs.pdf>
-Package pdftex.def Info: plot/Data_GGpairs.pdf used on input line 385.
+Package pdftex.def Info: plot/Data_GGpairs.pdf used on input line 442.
 (pdftex.def)             Requested size: 281.85587pt x 188.38277pt.
 
-<plot/Cutting_GGpairs.pdf, id=298, 396.48125pt x 264.99pt>
+<plot/Cutting_GGpairs.pdf, id=325, 396.48125pt x 264.99pt>
 File: plot/Cutting_GGpairs.pdf Graphic file (type pdf)
 
 <use plot/Cutting_GGpairs.pdf>
-Package pdftex.def Info: plot/Cutting_GGpairs.pdf used on input line 393.
+Package pdftex.def Info: plot/Cutting_GGpairs.pdf used on input line 450.
 (pdftex.def)             Requested size: 281.85587pt x 188.38277pt.
- [19 <./plot/multiplot_scorer.pdf> <./plot/Data_GGpairs.pdf>] <plot/Suturing_GG
-pairs.pdf, id=317, 396.48125pt x 264.99pt>
+
+
+LaTeX Warning: Reference `LastPage' on page 22 undefined on input line 453.
+
+[22 <./plot/multiplot_scorer.pdf> <./plot/Data_GGpairs.pdf>]
+<plot/Suturing_GGpairs.pdf, id=343, 396.48125pt x 264.99pt>
 File: plot/Suturing_GGpairs.pdf Graphic file (type pdf)
 
 <use plot/Suturing_GGpairs.pdf>
-Package pdftex.def Info: plot/Suturing_GGpairs.pdf used on input line 401.
+Package pdftex.def Info: plot/Suturing_GGpairs.pdf used on input line 458.
 (pdftex.def)             Requested size: 281.85587pt x 188.38277pt.
 
-<plot/SubjectVsPP.pdf, id=318, 396.48125pt x 264.99pt>
+<plot/SubjectVsPP.pdf, id=344, 396.48125pt x 264.99pt>
 File: plot/SubjectVsPP.pdf Graphic file (type pdf)
 
 <use plot/SubjectVsPP.pdf>
-Package pdftex.def Info: plot/SubjectVsPP.pdf used on input line 408.
+Package pdftex.def Info: plot/SubjectVsPP.pdf used on input line 465.
 (pdftex.def)             Requested size: 281.85587pt x 188.38277pt.
- [20 <./plot/Cutting_GGpairs.pdf> <./plot/Suturing_GGpairs.pdf>] 
+
+
+LaTeX Warning: Reference `LastPage' on page 23 undefined on input line 472.
+
+[23 <./plot/Cutting_GGpairs.pdf> <./plot/Suturing_GGpairs.pdf>]
+
+Package lastpage Warning: Rerun to get the references right on input line 479.
+
+
 AED: lastpage setting LastPage
-[21 <./plot/SubjectVsPP.pdf>] (./Final_Report.aux) ) 
+
+LaTeX Warning: Reference `LastPage' on page 24 undefined on input line 479.
+
+[24 <./plot/SubjectVsPP.pdf>] (./Final_Report.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 6760 strings out of 492995
- 108192 string characters out of 6132704
- 200740 words of memory out of 5000000
- 10000 multiletter control sequences out of 15000+600000
- 116685 words of font info for 182 fonts, out of 8000000 for 9000
+ 6785 strings out of 492995
+ 108496 string characters out of 6132704
+ 202726 words of memory out of 5000000
+ 10004 multiletter control sequences out of 15000+600000
+ 118035 words of font info for 197 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,10n,43p,622b,402s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/te
-xmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2017/texmf-dist/fonts/
-type1/public/fourier/fourier-ms.pfb></usr/local/texlive/2017/texmf-dist/fonts/t
-ype1/adobe/utopia/putb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/ad
-obe/utopia/putr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/adobe/uto
-pia/putri8a.pfb>
-Output written on Final_Report.pdf (22 pages, 1589714 bytes).
+ 42i,10n,43p,622b,370s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/local/te
+xlive/2017/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/texlive/2
+017/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2017/tex
+mf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on Final_Report.pdf (25 pages, 1692093 bytes).
 PDF statistics:
- 364 PDF objects out of 1000 (max. 8388607)
- 250 compressed objects within 3 object streams
+ 391 PDF objects out of 1000 (max. 8388607)
+ 270 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 33461 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 33466 words of extra memory for PDF output out of 35830 (max. 10000000)
 

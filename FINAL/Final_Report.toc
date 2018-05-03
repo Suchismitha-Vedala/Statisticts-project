@@ -1,19 +1,22 @@
 \select@language {english}
-\contentsline {section}{Introduction}{2}
-\contentsline {section}{Initial Analysis}{3}
-\contentsline {subsection}{Biographic Data}{3}
-\contentsline {subsection}{Trait Psychometric Data}{3}
-\contentsline {subsection}{State Psychometric Data}{4}
-\contentsline {subsection}{Perinasal Perspiration (Stress) Signal Data}{4}
-\contentsline {subsection}{Performance Data}{5}
-\contentsline {section}{Hypothesis Testing}{7}
-\contentsline {subsection}{Analysis of effect of each attribute on Score}{7}
-\contentsline {subsection}{Analysis of effect of each attribute on Time}{10}
-\contentsline {subsection}{Performance Analysis of Suturing Task}{11}
-\contentsline {subsection}{Analysis of Scorers on Task}{13}
-\contentsline {subsection}{Analysis of Number of Sutures made wrt. sex and sessions}{14}
-\contentsline {subsection}{Tai Score Effect on Performance}{15}
-\contentsline {section}{Conclusion}{16}
-\contentsline {section}{Appendix}{17}
-\contentsline {subsection}{List of Figures}{17}
-\contentsline {section}{References}{21}
+\contentsline {section}{Introduction}{3}
+\contentsline {section}{Motivation}{3}
+\contentsline {section}{Data Organization}{3}
+\contentsline {section}{Data Cleaning}{4}
+\contentsline {section}{Initial Analysis}{6}
+\contentsline {subsection}{Biographic Data}{6}
+\contentsline {subsection}{Trait Psychometric Data}{6}
+\contentsline {subsection}{State Psychometric Data}{7}
+\contentsline {subsection}{Perinasal Perspiration (Stress) Signal Data}{7}
+\contentsline {subsection}{Performance Data}{8}
+\contentsline {section}{Hypothesis Testing}{10}
+\contentsline {subsection}{Analysis of effect of each attribute on Score}{10}
+\contentsline {subsection}{Analysis of effect of each attribute on Time}{13}
+\contentsline {subsection}{Performance Analysis of Suturing Task}{14}
+\contentsline {subsection}{Analysis of Scorers on Task}{16}
+\contentsline {subsection}{Analysis of Number of Sutures made wrt. sex and sessions}{17}
+\contentsline {subsection}{Tai Score Effect on Performance}{18}
+\contentsline {section}{Conclusion}{19}
+\contentsline {section}{Appendix}{20}
+\contentsline {subsection}{List of Figures}{20}
+\contentsline {section}{References}{24}
