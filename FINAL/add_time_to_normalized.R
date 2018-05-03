@@ -13,9 +13,9 @@ parse<-function(x,npar=TRUE,print=TRUE){
   if (length(s) > 1) {
     min<-sapply(s,"[",1)
     sec<-sapply(s,"[",2)
-    min<-as.numeric(min)
+    min<-as.numeric(min) * 60
     sec<-as.numeric(sec)
-    totalMinutes=min + (sec/100)
+    totalMinutes=min + sec
     return (totalMinutes)
   } else {
     return (as.numeric(x))
