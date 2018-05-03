@@ -162,6 +162,7 @@ savePlot(tai_plot, "Plot/tai_plot.pdf")
 # reflecting increased facility with the tasks
 State.Pyschometric.Data <- function(){
   for(i in c(1,2,3,4,5,6,7,8,9, 10, 11, 12, 13,19, 20, 21,22,23,24,25,26)){
+    i = 1
     path1 = paste("Plot/subject", formatC(i, width=2, flag="0"), sep="")  
     path = paste("Data/subject", formatC(i, width=2, flag="0"), sep="")  
     print(path)

@@ -22,11 +22,11 @@ parse<-function(x,npar=TRUE,print=TRUE){
   }
 }
 
-perf.Data <- read.csv("MicrosurgeryPerformance.csv")
+perf.Data <- read.csv("Data/MicrosurgeryPerformance.csv")
 
-normalized <- read.csv("Normalised.csv")
+normalized <- read.csv("Data/Normalised_Data.csv")
 
-casted <- dcast(normalized, Subject ~ Session ~ Task)
+casted <- dcast(normalized,  Session ~ Task)
 
 # Remove last row
 perf.Data <- perf.Data[1:15,]
@@ -111,6 +111,9 @@ final$Session <- as.numeric(final$Session)
 
 final.melt <- melt(final, c(3,4))
 
+# appednd the same data to it because time is same for scorer 2 also
+final.melt <- rbind(final.melt,final.melt)
+
 normalized$Time <- final.melt$value
 
-write.csv(normalized, file="Normalised.csv")
+write.csv(normalized, file="Data/Normalised_Data.csv")
