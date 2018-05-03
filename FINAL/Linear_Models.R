@@ -4,6 +4,12 @@ library(ggplot2)
 library(reshape2)
 library(dplyr)
 library(nlme)
+library(GGally)
+library(corrplot)
+library(plot3D)
+library(shiny)
+library(rgl)
+
 dir=getwd()
 dir
 data=read.csv("Data/Normalised_Data.csv")
@@ -54,6 +60,7 @@ for( i in 1:15){
 Age=rep(unlist(data2$Age),each=5)
 Sex=rep(unlist(data2$Sex),each=5)
 sdata=data.frame(Subject,Age, Sex,session,Sutures)
+sdata$Time=data[76:150,"Time"]
 attach(sdata)
 interaction.plot(x.factor     = session,
                  trace.factor = Sex, 
@@ -147,34 +154,54 @@ p11 = ggplot(data, aes(x=Task,y=Time,fill=Task))  + theme(plot.title = element_t
 ggsave(filename="Plot/TaskVsTime.pdf", plot=p11)
 
 
+
+
+
 #Analysis based on Scorer
 Cutting=read.csv("Data/Cutting_Data.csv")
 p12=ggplot(Cutting, aes(x=Scorer, y=Scores,fill=Scorer)) + theme(plot.title = element_text(hjust = 0.5)) +  
   geom_boxplot()+ggtitle("Analysis of Scores based on Scorer") +labs(x="Scorer Number",y="Number of Scorer")
 ggsave(filename="Plot/Cutting_ScorerVsScore.pdf", plot=p12)
 #Wilcox Test
-CScorer1=as.numeric(Cutting[1:75,7])
-CScorer2=as.numeric(Cutting[76:150,7])
+CScorer1=as.numeric(Cutting[1:75,"Scores"])
+CScorer2=as.numeric(Cutting[76:150,"Scores"])
 wilcox.test(CScorer2,CScorer1, paired=TRUE, alternative ="two.sided")
 
 Suturing=read.csv("Data/Suturing_Data.csv")
 p13=ggplot(Suturing, aes(x=Scorer, y=Scores,fill=Scorer)) + 
   geom_boxplot()+ggtitle("Analysis of Scores based on Scorer") +labs(x="Scorer Number",y="Number of Scorer")
 ggsave(filename="Plot/Suturing_ScorerVsScore.pdf", plot=p13)
-SScorer1=as.numeric(Suturing[1:75,7])
-SScorer2=as.numeric(Suturing[76:150,7])
+SScorer1=as.numeric(Suturing[1:75,"Scores"])
+SScorer2=as.numeric(Suturing[76:150,"Scores"])
 #Wilcox Test
 wilcox.test(SScorer2,SScorer1, paired=TRUE, alternative ="two.sided")
 
+#Normality Tests
+
+shapiro.test(CScorer1)
+shapiro.test(CScorer2)
+shapiro.test(SScorer1)
+shapiro.test(SScorer2)
 
 #Wilcox Test:
 wilcox.test(Cutting$Scores,Suturing$Scores,paired=TRUE, alternative ="two.sided")
 
 
+p14=ggplot(sdata,aes(Sutures,Time)) + theme(plot.title = element_text(hjust = 0.5))+geom_point()+geom_smooth()+ylim(1150,1210)+ggtitle("Performance Analysis of Suturing") +labs(y="Time in Seconds",x="Number of Sutures made")
+p14 <- p14 + facet_grid(session~.)
+
+ggsave(filename="Plot/SuturingVsTime.pdf", plot=p14) 
 
 
+cdata=data.frame(Cutting$Age,Cutting$Sex,Cutting$Session,Cutting$Scorer,Cutting$Scores)
+sdata=data.frame(Suturing$Age,Suturing$Sex,Suturing$Session,Suturing$Scorer,Suturing$Scores)
+colnames(cdata)=colnames(sdata)=c("Age","Sex","Session","Scorer","Scores")
+p15=ggpairs(cdata, aes(col = Scorer, alpha=0.4))
+ggsave(filename="Plot/Cutting_GGpairs.pdf", plot=p15) 
+p16=ggpairs(sdata, aes(col = Scorer, alpha=0.4))
+ggsave(filename="Plot/Suturing_GGpairs.pdf", plot=p16) 
 
-
-
-
-
+with(data,plot3d(data$Scores,data$Session,data$Subject,
+                    size=1, type="s", main="3D Linear Model Fit"))
+with(data,surface3d(unique(data$Scores),unique(data$Session),data$Subject,
+                      alpha=0.3,front="line", back="line"))

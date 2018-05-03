@@ -94,7 +94,7 @@ We draw a bar plot to see how gender defines data and histogram to see whether a
 We draw the histogram for Trait Anxiety Inventory(TAI) scores\\
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{tai_plot.pdf}
+	\includegraphics[width=0.5\textwidth]{tai_plot.pdf}
 	\caption{Histogram of Tai Scores}
 	\centering
 \end{figure}
@@ -104,12 +104,12 @@ We draw the histogram for Trait Anxiety Inventory(TAI) scores\\
 For each subject draw the bar plots for all the NASA-TLX subscales per task. This will give two figures per subject per subscale, one for suturing and one for cutting, where the evolution of the scores from the initial to the final session will be evident. \\
 \begin{figure}[!htb]
 	\begin{minipage}[c]{0.5\linewidth}
-	\includegraphics[width=\linewidth]{subject01_State_Psychometry.pdf}
+	\includegraphics[width=\linewidth]{subject01_State_Psychometric_Data_of_Cutting_and_Suturing.pdf}
 	\caption{Subject 1 }
 	\end{minipage}
 	\hfill
 	\begin{minipage}[c]{0.5\linewidth}
-	\includegraphics[width=\linewidth]{subject02_State_Psychometry.pdf}
+	\includegraphics[width=\linewidth]{subject02_State_Psychometric_Data_of_Cutting_and_Suturing.pdf}
 	\caption{Subject 2}
 	\end{minipage}
 \end{figure}
@@ -134,19 +134,17 @@ For each session of each subject  we draw the perspiration values using black fo
 We draw the accuracy and time bar plots of each subject for each session and each task.\\
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{1Score_barplot.pdf}
+	\includegraphics[width=0.5\textwidth]{1Score_barplot.pdf}
 	\caption{Subject 1 Score Barplot}
 	\centering
 \end{figure}
 \\
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{1Time_barplot.pdf}
+	\includegraphics[width=0.5\textwidth]{1Time_barplot.pdf}
 	\caption{Subject 1 Time Barplot}
 	\centering
 \end{figure}\\
-
-\newpage
 \section*{Hypothesis Testing}
 We normalize the perspiration values and perform the log of the values for our analysis.\\
 \addcontentsline{toc}{section}{Hypothesis Testing}
@@ -161,7 +159,7 @@ Linear modeling gives the relationship between the dependent and independent var
 In our data set we are finding the hypothesis between each attribute such as Age, sex, year and mean perspiration with the scores of scorer.\\
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{ScoreSummary.pdf}
+	\includegraphics[width=0.5\textwidth]{ScoreSummary.pdf}
 	\caption{Linear model of score vs all other attributes}
 	\centering
 \end{figure}
@@ -187,7 +185,7 @@ In our data set we are finding the hypothesis between each attribute such as Age
 	\includegraphics[width=\linewidth]{SessionVsScore.pdf}
 	\caption{Analysis of Scores based on Session}
 	\end{minipage}
-\end{figure}
+\end{figure}\\
 \textbf{Inference}:\\
 The above equation informs us that scores will increase by -34.67 for every one percent increase in mean Perspiration value , and score is directly proportional to age which states that the if older age people are hired the score would have increased\\
 \\
@@ -203,7 +201,7 @@ Linear modeling gives the relationship between the dependent and independent var
 In our data set we are finding the hypothesis between each attribute such as Age, sex, year and mean perspiration with the time taken to do the task.\\
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{TimeSummary.pdf}
+	\includegraphics[width=0.5\textwidth]{TimeSummary.pdf}
 	\caption{Linear model of Time vs all other attributes}
 	\centering
 \end{figure}
@@ -229,13 +227,13 @@ In our data set we are finding the hypothesis between each attribute such as Age
 	\includegraphics[width=\linewidth]{SessionVsTime.pdf}
 	\caption{Analysis of Time based on Session}
 	\end{minipage}
-\end{figure}
+\end{figure}\\
 \textbf{Inference}:\\
 We observe that the means of Time vs Scorer or Gender do not have highly significant difference. Although, Task does have significant difference, we do not take it as a notifiable inference, because the time limits are different for each tasks, with time to complete suturing task being. 20 minutes. Hence, From the summary and the plots we infer that the time taken highly depends on the sessions.\\
 \\
 \FloatBarrier
-\subsection*{3. Performance Analysis With Respect to Number of Sutures Made}
-\addcontentsline{toc}{subsection}{Performance Analysis With Respect to Number of Sutures Made}
+\subsection*{3. Performance Analysis of Suturing Task}
+\addcontentsline{toc}{subsection}{Performance Analysis of Suturing Task}
 \textbf{Approach:Linear Model}:\\
 \begin{figure}[!htb]
 	\begin{minipage}[c]{0.5\linewidth}
@@ -248,18 +246,24 @@ We observe that the means of Time vs Scorer or Gender do not have highly signifi
 	\caption{Performance WRT number of sutures summed across all subjects}
 	\end{minipage}
 \end{figure}
-\\
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Suture_Sex_Summary.pdf}
+	\caption{Analysis of Linear Model}
+	\centering
+\end{figure}\\
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{SuturingVsTime.pdf}
+	\caption{Performance Analysis of Suturing overTime }
+	\centering
+\end{figure}\\
 From the figures, we understand that the number of sutures increases with each session. \\
 To summarize it over all the subjects, we draw the bar plot with values of all subjects summed under each session , which gives us an understanding that with each session, the performance increases across all subjects.\\
 When creating the linear model, and performing the analysis, we observe that the number of sutures is highly dependent on sessions .
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.8\textwidth]{Suture_Sex_Summary.pdf}
-	\caption{Analysis of Linear Model}
-	\centering
-\end{figure}
+Also, from the Performance analysis with respect to time plot(Figure:23), we infer that as the time decreases, the subjects are able to make more number of sutures and as number of session increases, the performance gets better.
 \textbf{Inference}:\\
-The number of sutures made increases with each session, i.e the subjects are performing well.\\
+The number of sutures made increases with each session and takes less time, i.e the subjects are performing well.\\
 \\
 \FloatBarrier
 \subsection*{4. Analysis of Scorers on Task:}
@@ -295,7 +299,7 @@ $Alternate Hypothesis : H_1 = $ The number of sutures made is  significant on se
 \\
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{SuturingVsSex.pdf}
+	\includegraphics[width=0.5\textwidth]{SuturingVsSex.pdf}
 	\caption{Interaction plot of Number of Sutures made wrt to Sex and Session}
 	\centering
 \end{figure}
@@ -327,9 +331,6 @@ Sex has an effect on Number of Sutures made and females made more number of Sutu
 \addcontentsline{toc}{section}{Appendix}
 \subsection*{List of Figures}
 \addcontentsline{toc}{subsection}{List of Figures}
-\subsection*{List of Tables}
-\addcontentsline{toc}{subsection}{List of Tables}
-
 
 %-------------------------------------------------------------------------------
 % REFERENCES
