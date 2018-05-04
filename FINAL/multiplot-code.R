@@ -183,8 +183,8 @@ State.Pyschometric.Data <- function(){
     t <- rbind(cutNASA, sutNASA)
     ttl <- paste("Subject ",ttl)
     q <- ggplot(t, aes(Response, as.integer(value), fill = factor(variable))) + ylim(0,20) + theme_light() +
-      geom_bar(position = "dodge", stat="identity")  + ylab("") + xlab("") + theme(legend.position = "none") +
-      theme(axis.text.y = element_text(size=5),axis.text.x = element_text(angle=25, hjust=1, size = 5),plot.title = element_text(hjust = 0.5, size=4)) + scale_fill_manual(name="Sessions",values=group.colors) #+ ggtitle(paste(ttl, "State Psychometric Data of Cutting and Suturing")) 
+      geom_bar(position = "dodge", stat="identity")  + ylab("Scores") + xlab("Response") + theme(legend.position = "none") +
+      theme(axis.title.y = element_text(size=6), axis.title.x = element_text(size=6), axis.text.y = element_text(size=5),axis.text.x = element_text(angle=25, hjust=1, size = 5),plot.title = element_text(hjust = 0.5, size=4)) + scale_fill_manual(name="Sessions",values=group.colors) + ggtitle(paste(ttl, "State Psychometric Data")) 
     q <- q + facet_grid(action ~ .)
     q
     
@@ -201,7 +201,7 @@ State.Pyschometric.Data <- function(){
   plots[[2]] <- plots[[2]] + ylab("Score")
   #plots[[7]] <- plots[[7]] + ggtitle("State Psychometric Data of Cutting and Suturing") 
   plots[[9]] <- plots[[9]] + xlab("Response") 
-  #multiplot(plots[[1]],plots[[2]], plots[[3]],plots[[4]],plots[[5]],plots[[6]],plots[[7]],plots[[8]],plots[[9]],plots[[10]],plots[[11]],plots[[12]],plots[[13]],plots[[14]],plots[[15]], cols = 5)
+  multiplot(plots[[1]],plots[[2]], plots[[3]],plots[[4]],plots[[5]],plots[[6]],plots[[7]],plots[[8]],plots[[9]],plots[[10]],plots[[11]],plots[[12]],plots[[13]],plots[[14]],plots[[15]],plots[[16]],plots[[17]],plots[[18]],plots[[19]],plots[[20]],plots[[21]], cols = 7)
   multiplot(plots[[1]],plots[[2]], plots[[3]],plots[[4]],plots[[5]],plots[[6]],plots[[7]],plots[[8]],plots[[9]],plots[[10]],plots[[11]],plots[[12]], cols = 4)
   multiplot(plots[[13]],plots[[14]],plots[[15]],plots[[16]],plots[[17]],plots[[18]],plots[[19]],plots[[20]],plots[[21]], cols = 4)
   
@@ -300,15 +300,15 @@ Perinasal.Perspiration <- function(){
     
     title<-paste("Perinasal Perspiration (Stress) Signal for Subject ",1)
     p <- ggplot(data, aes(x=Time, y= Perspiration, col=factor(task))) + geom_line()
-    p <- p +  xlab("") +  theme_light() +
-      ylab("") +
-      geom_line() + theme(legend.position = "none")  + # ggtitle(title) + 
-      scale_colour_manual(values=group.colors) + theme(axis.text.y = element_text(size=5),axis.text.x = element_text(hjust=1, size = 5),plot.title = element_text(hjust = 0.5, size=4)) +
+    p <- p +  xlab("Time[S]") +  theme_light() +
+      ylab(expression(paste("Perinasal Perspiration"))) +
+      geom_line() + theme(legend.position = "none")  +  ggtitle(title) + 
+      scale_colour_manual(values=group.colors) + theme(axis.title.y = element_text(size=6), axis.title.x = element_text(size=6), axis.text.y = element_text(size=5),axis.text.x = element_text(angle=25, hjust=1, size = 5),plot.title = element_text(hjust = 0.5, size=4))  +
       guides(color=guide_legend(title="Task")) 
     p <- p + facet_grid(session ~ . , scales = "free")
-    pdf(paste(substr(path,8,9),"Perinasal_Perspiration.pdf",sep="_")) 
-    print(p)
-    dev.off()
+    #pdf(paste(substr(path,8,9),"Perinasal_Perspiration.pdf",sep="_")) 
+    #print(p)
+    #dev.off()
     print(i)
     plots[[i]] <- p
     
@@ -443,9 +443,9 @@ for (i in 1:15) {
   title <- paste("Time Barplot for Subject ", i)
   q <- melt(t, id=c("ID","session","Score2Sut","Score2Cut","Score1Sut","Score1Cut"))
   p <- ggplot(q, aes(session,value, goup=variable , fill=variable)) +  geom_bar(stat="identity",position = "dodge")
-  p <- p +  xlab("") + theme_light() +
-    ylab("") + theme(legend.position = "none") +
-    theme(axis.text.y = element_text(size=4),axis.text.x = element_text(hjust=1, size = 5),plot.title = element_text(hjust = 0.5, size=4)) + 
+  p <- p +  xlab("Sessions") + theme_light() +
+    ylab("Time[secs]") + theme(legend.position = "none") + ggtitle(title) +
+    theme(axis.title.y = element_text(size=6), axis.title.x = element_text(size=6), axis.text.y = element_text(size=5),axis.text.x = element_text(angle=25, hjust=1, size = 5),plot.title = element_text(hjust = 0.5, size=4))  + 
     scale_fill_discrete(name = "Task", labels = c("Cutting", "Suturing")) 
   #pdf(paste(i,"Time_barplot.pdf",sep = "_")) 
   #print(p)
@@ -466,9 +466,9 @@ for (i in 1:15) {
   r$scorer <- "Scorer 1"
   r <- rbind(r,q)
   r$variable <- substr(r$variable,7,9)
-  u <- ggplot(r, aes(session,value, goup=variable , fill=variable)) +  geom_bar(stat="identity",position = "dodge") + xlab("") + theme_light() +
-    ylab("") + theme(legend.position = "none") + 
-    theme(axis.text.y = element_text(size=4),axis.text.x = element_text(hjust=1, size = 5),plot.title = element_text(hjust = 0.5, size=4)) + 
+  u <- ggplot(r, aes(session,value, goup=variable , fill=variable)) +  geom_bar(stat="identity",position = "dodge") + xlab("Sessions") + theme_light() +
+    ylab("Score") + theme(legend.position = "none") + ggtitle(title) +
+    theme(axis.title.y = element_text(size=6), axis.title.x = element_text(size=6), axis.text.y = element_text(size=5),axis.text.x = element_text(angle=25, hjust=1, size = 5),plot.title = element_text(hjust = 0.5, size=4))  + 
     scale_fill_discrete(name = "Task", labels = c("Cutting", "Suturing"))
   u <- u + facet_grid(scorer~.)
   
