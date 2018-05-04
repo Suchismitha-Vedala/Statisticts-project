@@ -82,9 +82,9 @@ During the main part of each session, the subjects underwent the following treat
 3.Suturing: The subjects had to perform suturing in the inanimate simulator. They were facially recorded by a thermal and visual camera.\\
 \\
 Explicit accuracy scores per task is provided in the data. Hence, the cutting task has its own accuracy scores and so is the case with the suturing task. The perspiration values are recorded in all time frames for all subjects and sessions. The subjects were asked to fill out a  NASA-TLX questionnaire after each task. he NASA-TLX instrument features five subscales measuring different aspects of the subjects' perceptions regarding task difficulty.We perform an analysis with this given data.\\   }
-
 \section*{Motivation}
 \addcontentsline{toc}{section}{Motivation}
+Given the Microsurgery Performance Data, We are interested in finding any new observations that can effect the performance. Statistical Tests and Analysis help in exploring the unexplored data and making assumptions and conclusions that can lead to better performance. The analysis can always lead to performing better experiments in the future.\\
 \section*{Data Organization}
 \addcontentsline{toc}{section}{Data Organization}
 {The data was structured into main 3 main files.\\
@@ -124,14 +124,38 @@ stress signal obtained during task - stress signal during relaxed.\\
 \\
 The data  now has the following format:\\
 \begin{figure}[!htb]
-	
 	\includegraphics[width=1.1\textwidth]{New_data.pdf}
 	\caption{Data Cleaned for Analysis}
-\end{figure}}
+\end{figure}
 \newpage
 \section*{Initial Analysis}
 \addcontentsline{toc}{section}{Initial Analysis}
-\subsection*{Biographic Data}
+\FloatBarrier
+\subsection*{Correlation Matrix}
+With the modified data, we not try to understand the correlation between the values. Highly correlated values can be redundant and we can eliminate that in our classification. When taken correlation between all numeric columns of data , we get the following result, where\\
+P-stands for the probable value\\
+n stands for number of observations \\
+r is the correlation value which can range from -1 to 1.\\
+From the data we understand that Age and Year are positively correlated with a r value of 0.83 stating that, with increase in age , year increases.There is no association between sessions and Age, Year and Tai scores. All other attributes are neither highly positively or negatively correlated, i.e each correlation value is neither near to -1 or +1 which gives us a huge scope to perform analysis and interpret results\\
+\begin{figure}[!htb]
+	\includegraphics[width=0.9\textwidth]{Correlation_Data.pdf}
+	\caption{Correlation Matrix}
+\end{figure}
+\FloatBarrier
+\subsection*{Analysis of Mean Perspiration Based on Subject}
+We bar plot the mean perspiration (stress signal)values of all the subjects and of each task.We observe that subjects experienced more stress during the Suturing Task and Subject7 has displayed high level of stress.\\
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.6\textwidth]{SubjectVsPP.pdf}
+	\caption{Accuracy of Mean Perspiration of all subjects}
+	\centering
+\end{figure}
+\newpage
+\FloatBarrier
+\section*{Quality Control}
+\addcontentsline{toc}{section}{Quality Control}
+\FloatBarrier
+\subsection*{1.Biographic Data}
 \addcontentsline{toc}{subsection}{Biographic Data}
 We draw a bar plot to see how gender defines data and histogram to see whether age has any effect on the data.\\
 \begin{figure}[!htb]
@@ -145,8 +169,8 @@ We draw a bar plot to see how gender defines data and histogram to see whether a
 	\caption{Histogram of age distribution}
 	\end{minipage}
 \end{figure}
-
-\subsection*{Trait Psychometric Data}
+\FloatBarrier
+\subsection*{2.Trait Psychometric Data}
 \addcontentsline{toc}{subsection}{Trait Psychometric Data}
 We draw the histogram for Trait Anxiety Inventory(TAI) scores\\
 \begin{figure}[!htb]
@@ -155,8 +179,8 @@ We draw the histogram for Trait Anxiety Inventory(TAI) scores\\
 	\caption{Histogram of Tai Scores}
 	\centering
 \end{figure}
-\newpage
-\subsection*{State Psychometric Data}
+\FloatBarrier
+\subsection*{3.State Psychometric Data}
 \addcontentsline{toc}{subsection}{State Psychometric Data}
 For each subject draw the bar plots for all the NASA-TLX subscales per task. This will give two figures per subject per subscale, one for suturing and one for cutting, where the evolution of the scores from the initial to the final session will be evident. \\
 \begin{figure}[!htb]
@@ -170,8 +194,8 @@ For each subject draw the bar plots for all the NASA-TLX subscales per task. Thi
 	\caption{Subject 2}
 	\end{minipage}
 \end{figure}
-
-\subsection*{Perinasal Perspiration (Stress) Signal Data}
+\FloatBarrier
+\subsection*{4.Perinasal Perspiration (Stress) Signal Data}
 \addcontentsline{toc}{subsection}{Perinasal Perspiration (Stress) Signal Data}
 For each session of each subject  we draw the perspiration values using black for baseline, green for cutting, and red for suturing. 
 \begin{figure}[!htb]
@@ -186,7 +210,7 @@ For each session of each subject  we draw the perspiration values using black fo
 	\end{minipage}
 \end{figure}
 \FloatBarrier
-\subsection*{Performance Data}
+\subsection*{5.Performance Data}
 \addcontentsline{toc}{subsection}{Performance Data}
 We draw the accuracy and time bar plots of each subject for each session and each task.\\
 \begin{figure}[!htb]
@@ -203,23 +227,24 @@ We draw the accuracy and time bar plots of each subject for each session and eac
 	\centering
 \end{figure}\\
 \section*{Hypothesis Testing}
-We normalize the perspiration values and perform the log of the values for our analysis.\\
+We now perform various tests to determine significance of any factor on the other and make inferences about the performance of the subjects in tasks.\\
 \addcontentsline{toc}{section}{Hypothesis Testing}
 \subsection*{1. Analysis of effect of each attribute on Score}
 \addcontentsline{toc}{subsection}{Analysis of effect of each attribute on Score}
 \textbf{Hypothesis}:\\
-$Null Hypothesis : H_0 = $ The score obtained does not depend on the demographics of the subject , session , age , year , sex and perspiration.\\
-$Alternate Hypothesis : H_1 = $ The score obtained  depends on the demographics of the subject , session , age , year , sex and perspiration.\\
+Null Hypothesis : $H_0$ =  The score obtained does not depend on the demographics of the subject , session , age , year , sex and perspiration.\\
+Alternate Hypothesis : $H_1$ =  The score obtained  depends on the demographics of the subject , session , age , year , sex and perspiration.\\
 \\
 \textbf{Approach:Linear Modelling}:\\
 Linear modeling gives the relationship between the dependent and independent variables. 
 In our data set we are finding the hypothesis between each attribute such as Age, sex, year and mean perspiration with the scores of scorer.\\
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.5\textwidth]{ScoreSummary.pdf}
+	\includegraphics[width=0.8\textwidth]{ScoreSummary.pdf}
 	\caption{Linear model of score vs all other attributes}
 	\centering
 \end{figure}
+When we performed the linear model and analyzed the results, we observe that the pvalue is way less than 0.05, thus rejecting the null hypothesis. We also observe that the Score is highly Significant on Sex and Sessions.\\
 \\
 \begin{figure}[!htb]
 	\begin{minipage}[c]{0.5\linewidth}
@@ -243,26 +268,29 @@ In our data set we are finding the hypothesis between each attribute such as Age
 	\caption{Analysis of Scores based on Session}
 	\end{minipage}
 \end{figure}\\
+\\
 \textbf{Inference}:\\
-The above equation informs us that scores will increase by -34.67 for every one percent increase in mean Perspiration value , and score is directly proportional to age which states that the if older age people are hired the score would have increased\\
+From the plots and linear model, we infer that the score is highly dependent on Sex, Session number and nearly significant on the Task.\\
+\\
 \\
 \FloatBarrier
 \subsection*{2. Analysis of effect of each attribute on Time}
 \addcontentsline{toc}{subsection}{Analysis of effect of each attribute on Time}
 \textbf{Hypothesis}:\\
-$Null Hypothesis : H_0 = $ The time taken to do a task is not dependednt of age, session, sex, Perspiration.\\
-$Alternate Hypothesis : H_1 = $ he time taken to do a task depends on  age, session, sex, Perspiration.\\
+Null Hypothesis : $H_0 $=  The time taken to do a task is not dependent of age, session, sex, Perspiration.\\
+Alternate Hypothesis : $H_1$ =  he time taken to do a task depends on  age, session, sex, Perspiration.\\
 \\
 \textbf{Approach:Linear Modelling}:\\
 Linear modeling gives the relationship between the dependent and independent variables. 
-In our data set we are finding the hypothesis between each attribute such as Age, sex, year and mean perspiration with the time taken to do the task.\\
+In our data set we are finding the hypothesis between each attribute such as Age, sex,Scorer,Task,Session and mean perspiration with the time taken to do the task.\\
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.5\textwidth]{TimeSummary.pdf}
+	\includegraphics[width=0.8\textwidth]{TimeSummary.pdf}
 	\caption{Linear model of Time vs all other attributes}
 	\centering
 \end{figure}
 \\
+When we performed the linear model and analyzed the results, we observe that the pvalue is way less than 0.05, thus rejecting the null hypothesis. We also observe that the Time taken is highly Significant on Task and Sessions. \\
 \begin{figure}[!htb]
 	\begin{minipage}[c]{0.5\linewidth}
 	\includegraphics[width=\linewidth]{ScorerVsTime.pdf}
@@ -291,7 +319,14 @@ We observe that the means of Time vs Scorer or Gender do not have highly signifi
 \FloatBarrier
 \subsection*{3. Performance Analysis of Suturing Task}
 \addcontentsline{toc}{subsection}{Performance Analysis of Suturing Task}
-\textbf{Approach:Linear Model}:\\
+We first perform a correlation between number of sutures made and subject, age, time taken scorer, scores and session. We observe that time and number of sutures made are moderately negatively correlated, which indicates that the subjects are performing better. Also, number of sutures made is highly correlated with the scores. The session is moderately positively correlated with Sutures, indicating a positive relationship. \\
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Corr_Sutures.pdf}
+	\caption{Correlation Matrix of Sutures Data}
+	\centering
+\end{figure}\\
+\textbf{Approach:Linear Model}:
 \begin{figure}[!htb]
 	\begin{minipage}[c]{0.5\linewidth}
 	\includegraphics[width=\linewidth]{PerformanceWRTSutures.pdf}
@@ -305,7 +340,7 @@ We observe that the means of Time vs Scorer or Gender do not have highly signifi
 \end{figure}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.5\textwidth]{Suture_Sex_Summary.pdf}
+	\includegraphics[width=0.7\textwidth]{Sutures_Summary.pdf}
 	\caption{Analysis of Linear Model}
 	\centering
 \end{figure}\\
@@ -318,7 +353,7 @@ We observe that the means of Time vs Scorer or Gender do not have highly signifi
 From the figures, we understand that the number of sutures increases with each session. \\
 To summarize it over all the subjects, we draw the bar plot with values of all subjects summed under each session , which gives us an understanding that with each session, the performance increases across all subjects.\\
 When creating the linear model, and performing the analysis, we observe that the number of sutures is highly dependent on sessions .
-Also, from the Performance analysis with respect to time plot(Figure:23), we infer that as the time decreases, the subjects are able to make more number of sutures and as number of session increases, the performance gets better.
+Also, from the Performance analysis with respect to time plot, we infer that as the time decreases, the subjects are able to make more number of sutures and as number of session increases, the performance gets better.\\
 \textbf{Inference}:\\
 The number of sutures made increases with each session and takes less time, i.e the subjects are performing well.\\
 \\
@@ -329,6 +364,8 @@ The number of sutures made increases with each session and takes less time, i.e 
 $Null Hypothesis : H_0 = $ The mean of scores is same for both the Scorers\\
 $Alternate Hypothesis : H_1 = $ The  mean of scores is different for both the Scorers\\
 \\
+\textbf{Assumptions}:\\
+We perform shapiro.test to determine whether the Scores of Cutting and Suturing are normalized or not.We observe that the p-value is less than 0.05 in both the cases, which tells us that the columns are not normalized . Hence we perform Wilcoxon Test.\\
 \textbf{Approach:Wilcox Test}:\\
 \begin{figure}[!htb]
 	\begin{minipage}[c]{0.5\linewidth}
@@ -342,17 +379,17 @@ $Alternate Hypothesis : H_1 = $ The  mean of scores is different for both the Sc
 	\end{minipage}
 \end{figure}
 \\
-Cutting : When performed Wilcox test, p-value is greater than 0.05, which applies the means have not changed\\
-Suturing: When performed Wilcox test, p-value is less than 0.05, which states that the means of the scorers is different. \\
+Cutting : When performed Wilcox test, p-value is 0.1676 which is greater than 0.05, which applies the means have not changed\\
+Suturing: When performed Wilcox test, p-value is 0.00716, which less than 0.05, which states that the means of the scorers is different. \\
 \\
 \textbf{Inference}:\\
-Scorer has an effect for Suturing and Cutting\\
+Scorer has impact on Suturing Task but not on Cutting Task,\\
 \FloatBarrier
 \subsection*{5. Analysis of Number of Sutures made with respect to sex and sessions:}
 \addcontentsline{toc}{subsection} {Analysis of Number of Sutures made wrt. sex and sessions}
 \textbf{Hypothesis}:\\
-$Null Hypothesis : H_0 = $ The number of sutures made is not significant on sex of the subject\\
-$Alternate Hypothesis : H_1 = $ The number of sutures made is  significant on sex of the subject\\
+Null Hypothesis : $H_0 $= The number of sutures made is not significant on sex of the subject\\
+Alternate Hypothesis : $H_1$ =  The number of sutures made is  significant on sex of the subject\\
 \\
 \begin{figure}[!htb]
 	\centering
@@ -369,11 +406,13 @@ Sex has an effect on Number of Sutures made and females made more number of Sutu
 \FloatBarrier
 \subsection*{6. Analysis of Performance With Respect to  TAI}
 \addcontentsline{toc}{subsection}{Tai Score Effect on Performance}
+\textbf{Assumptions}:\\
+We perform shapiro.test to determine whether the Scores Below and Above Tai  are normalized or not.We observe that the p-value is less than 0.05 in both the cases, which tells us that the columns are not normalized . Hence we perform Wilcoxon Test.\\
 \textbf{Hypothesis}:\\
-$Null Hypothesis : H_0 = $ The performance score does not depend on tai score\\
-$Alternate Hypothesis : H_1 = $ With increase in tai score, the performance score decreases\\
+Null Hypothesis : $H_0 = $ The performance score does not depend on tai score\\
+Alternate Hypothesis : $H_1 = $ With increase in tai score, the performance score decreases\\
 \\
-\textbf{Approach:T Test}:\\
+\textbf{Approach:Wilxoxon Test}:
 \begin{figure}[!htb]
 	\begin{minipage}[c]{0.5\linewidth}
 	\includegraphics[width=\linewidth]{TaiVsScores.pdf}
@@ -389,7 +428,11 @@ Given, In the data, that Tai score above 40 means the subject is highly anxious.
 In addition, from the plots we can infer that the scores are pretty much the same, for both, above and below 40 Tai\\
 \\
 \textbf{Inference}:\\
-With this, we infer that the in general, performance does not depend on how anxious the subject is.
+With this, we infer that the in general, performance does not depend on how anxious the subject is and the tai score.
+\FloatBarrier
+\section*{Discussion}
+\addcontentsline{toc}{section}{Discussion}
+Further Research can be done 
 \FloatBarrier
 \section*{Conclusion}
 \addcontentsline{toc}{section}{Conclusion}
@@ -407,7 +450,7 @@ With this, we infer that the in general, performance does not depend on how anxi
 \subsection*{1. State Psychometric Data of all Subjects}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.6\textwidth]{multiplot_state_psycho.pdf}
+	\includegraphics[width=1.0\textwidth]{multiplot_state_psycho.pdf}
 	\caption{State Psychometric Data of all Subjects}
 	\centering
 \end{figure}
@@ -415,7 +458,7 @@ With this, we infer that the in general, performance does not depend on how anxi
 \subsection*{2. Perinasal Perspiration (Stress) Signal Data of all subjects}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.6\textwidth]{multiplot_perinasal_percep.pdf}
+	\includegraphics[width=1.0\textwidth]{multiplot_perinasal_percep.pdf}
 	\caption{Perinasal Perspiration (Stress) Signal Data of all subjects}
 	\centering
 \end{figure}
@@ -423,7 +466,7 @@ With this, we infer that the in general, performance does not depend on how anxi
 \subsection*{3. Suturing Time Performance of all Subjects}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.6\textwidth]{multiplot_task_time.pdf}
+	\includegraphics[width=1.0\textwidth]{multiplot_task_time.pdf}
 	\caption{ Suturing Time Performance of all Subjects}
 	\centering
 \end{figure}
@@ -431,41 +474,35 @@ With this, we infer that the in general, performance does not depend on how anxi
 \subsection*{4.Accuracy of Scores of all subjects}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.6\textwidth]{multiplot_scorer.pdf}
+	\includegraphics[width=1.0\textwidth]{multiplot_scorer.pdf}
 	\caption{Accuracy of Scores of all subjects}
 	\centering
 \end{figure}
 \FloatBarrier
-\subsection*{5.Matrix Visualization of Plots of Data based on Task}
+\subsection*{5.Correlation Matrix Visualization of Plots of Data based on Task}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.6\textwidth]{Data_GGpairs.pdf}
+	\includegraphics[width=1.0\textwidth]{Data_GGpairs.pdf}
 	\caption{Accuracy of Scores of all subjects}
 	\centering
 \end{figure}
 \FloatBarrier
-\subsection*{6.Matrix Visualization of Plots of Cutting Data based on scorer}
+\subsection*{6.Correlation Matrix Visualization of Plots of Cutting Data based on scorer}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.6\textwidth]{Cutting_GGpairs.pdf}
+	\includegraphics[width=1.0\textwidth]{Cutting_GGpairs.pdf}
 	\caption{Accuracy of Scores of all subjects}
 	\centering
 \end{figure}
 \FloatBarrier
-\subsection*{7.Matrix Visualization of Plots of Suturing Data based on scorer}
+\subsection*{7.Correlation Matrix Visualization of Plots of Suturing Data based on scorer}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.6\textwidth]{Suturing_GGpairs.pdf}
+	\includegraphics[width=1.0\textwidth]{Suturing_GGpairs.pdf}
 	\caption{Accuracy of Scores of all subjects}
 	\centering
 \end{figure}
-\subsection*{8.Analysis of Mean Perspiration Based on Subject}
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.6\textwidth]{SubjectVsPP.pdf}
-	\caption{Accuracy of Mean Perspiration of all subjects}
-	\centering
-\end{figure}
+
 %-------------------------------------------------------------------------------
 % REFERENCES
 %-------------------------------------------------------------------------------

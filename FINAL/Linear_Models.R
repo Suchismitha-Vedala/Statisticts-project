@@ -10,6 +10,8 @@ library(corrplot)
 #library(shiny)
 #library(rgl)
 library(stringr)
+library("ggpubr")
+library("Hmisc")
 
 dir=getwd()
 dir
@@ -17,11 +19,27 @@ data=read.csv("Data/Normalised_Data.csv")
 data$Sex[data$Sex==1]="Male"
 data$Sex[data$Sex==2]="Female"
 
+head(data)
+
 #function to plot mean point
 give.n <- function(x){
   return(data.frame(y = max(x)+1,
                     label = paste0("n = ",length(x))))
 }
+
+#Assumptions:
+
+shapiro.test(data$Scores)
+ggqqplot(data$Scores, ylab = "Scores")
+
+new_data=data[,2:13]
+new_data$Sessions=rep(c(1:5),60)
+drop <- c("Mean_Perspiration")
+new_data = (new_data[,!(names(new_data) %in% drop)])
+my_num_data <- new_data[, sapply(new_data, is.numeric)]
+cor_2 <- rcorr(as.matrix(my_num_data))
+cor_2
+
 
 #Normalised
 
@@ -55,18 +73,20 @@ give.n <- function(x){
 #Performance WRT Sutures
 data2=read_excel("Data/MicrosurgeryPerformance.xlsx")
 data2=data2[1:15,]
-Subject <- rep(unlist(data2$ID),each=5)
-session=rep(c(1:5),15)#rep(c("Session1","Session2","Session3","Session4","Session5"),15)
-
+Subject <- rep(rep(unlist(data2$ID),each=5),2)
+session=rep(rep(c(1:5),15),2)#rep(c("Session1","Session2","Session3","Session4","Session5"),15)
+scorer=rep(c("Scorer1","Scorer2"),each=75)
+Scores=append(data$Scores[76:150],data$Scores[226:300])
 
 Sutures=c()
 for( i in 1:15){
   Sutures=append(Sutures,c( as.numeric(data2[i,"Sutures 1"]),as.numeric(data2[i,"Sutures 2"]) ,as.numeric(data2[i,"Sutures 3"]) ,as.numeric(data2[i,"Sutures 4"]) ,as.numeric(data2[i,"Sutures 5"])         ))
 }
-Age=rep(unlist(data2$Age),each=5)
-Sex=rep(unlist(data2$Sex),each=5)
-sdata=data.frame(Subject,Age, Sex,session,Sutures)
-sdata$Time=data[76:150,"Time"]
+Sutures=rep(Sutures,2)
+Age=rep(rep(unlist(data2$Age),each=5),2)
+Sex=rep(rep(unlist(data2$Sex),each=5),2)
+sdata=data.frame(Subject,Age, Sex,session,Sutures,scorer,Scores)
+sdata$Time=rep(data[76:150,"Time"],2)
 attach(sdata)
 interaction.plot(x.factor     = session,
                  trace.factor = Sex, 
@@ -88,8 +108,9 @@ p1=ggplot(sdata,aes(session, Sutures, colour=Sex))+
   labs(x = 'Sessions', y = 'Number of Sutures')+ggtitle("Effect of Sex on Number of Sutures")+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/SuturingVsSex.pdf", plot=p1)
 
-session=rep(c("Session1","Session2","Session3","Session4","Session5"),15)
-summary(lm(Sutures~Sex*session))
+#session=rep(c(1:5),15)#rep(c("Session1","Session2","Session3","Session4","Session5"),15)
+#cor(Sutures,session)
+#summary(lm(Sutures~Sex+session))
 
 p2=ggplot(sdata,aes(session, Sutures,fill=session)) +theme_light()+ theme(plot.title = element_text(hjust = 0.5)) + 
   #geom_jitter(alpha=0.2) +geom_smooth(method=lm)+xlim(1,5)+
@@ -106,11 +127,14 @@ p3=ggplot(sdata,aes(session, Sutures,fill=session)) +
   theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/PerformanceWRTSutures.pdf", plot=p3)
 
-summary(lm(Sutures~session))
+sdata$Sex=Sex
+  
 
+my_num_data1 <- sdata[, sapply(sdata, is.numeric)]
+cor_3 <- rcorr(as.matrix(my_num_data1))
+cor_3
 
-
-
+summary(lm(Sutures~session+Scores+Sex+Age+Time,data=sdata))
 
 
 #Summary_Based on Scores with all other attributes
@@ -124,7 +148,6 @@ data$Subjects=Subjects
 rand_data=na.omit(data)
 model2=(lme(Scores~Normalised_PP+Age+Year+Sex+Task+Session,random=~1|Subjects,data=rand_data,method="REML"))
 anova(model2)
-
 
 
 
@@ -162,13 +185,13 @@ ggsave(filename="Plot/ScorerVsTime.pdf", plot=p8)
 
 p9 = ggplot(data, aes(x=Sex, y=Time,fill=Sex)) + theme_light()+theme(plot.title = element_text(hjust = 0.5)) +  
   geom_boxplot()+ggtitle("Analysis of Time based on Gender") +labs(x="Gender",y="Time in seconds")+stat_summary(fun.y="mean", geom="point", size=1, pch=16, color="red") +
-  stat_summary(fun.data = give.n, geom = "text")+theme(panel.grid.major = element_line(colour = 'transparent'))
+  stat_summary(fun.data = give.n, geom = "text",vjust = 0)+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/GenderVsTime.pdf", plot=p9)
 
 
 p10 = ggplot(data, aes(x=Session, y=Time,fill=Session))  +theme_light()+ theme(plot.title = element_text(hjust = 0.5)) +  
   geom_boxplot()+ggtitle("Analysis of Time based on Scorer") +labs(x="Session Number",y="Time in seconds")+stat_summary(fun.y="mean", geom="point", size=1, pch=16, color="red") +
-  stat_summary(fun.data = give.n, geom = "text")+theme(panel.grid.major = element_line(colour = 'transparent'))
+  stat_summary(fun.data = give.n, geom = "text",vjust = 0)+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/SessionVsTime.pdf", plot=p10)
 
 
@@ -187,9 +210,14 @@ p12=ggplot(Cutting, aes(x=Scorer, y=Scores,fill=Scorer)) +theme_light()+ theme(p
   geom_boxplot()+ggtitle("Analysis of Scores based on Scorer") +labs(x="Scorer Number",y="Scores")+stat_summary(fun.y="mean", geom="point", size=1, pch=16, color="red") +
   stat_summary(fun.data = give.n, geom = "text")+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/Cutting_ScorerVsScore.pdf", plot=p12)
-#Wilcox Test
+
 CScorer1=as.numeric(Cutting[1:75,"Scores"])
 CScorer2=as.numeric(Cutting[76:150,"Scores"])
+#Assumption
+shapiro.test(CScorer1)
+shapiro.test(CScorer2)
+
+#Wilcox Test
 wilcox.test(CScorer2,CScorer1, paired=TRUE, alternative ="two.sided")
 
 Suturing=read.csv("Data/Suturing_Data.csv")
@@ -197,17 +225,19 @@ p13=ggplot(Suturing, aes(x=Scorer, y=Scores,fill=Scorer)) +theme_light()+theme(p
   geom_boxplot()+ggtitle("Analysis of Scores based on Scorer") +labs(x="Scorer Number",y="Scores")+stat_summary(fun.y="mean", geom="point", size=1, pch=16, color="red") +
   stat_summary(fun.data = give.n, geom = "text")+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/Suturing_ScorerVsScore.pdf", plot=p13)
+
+
 SScorer1=as.numeric(Suturing[1:75,"Scores"])
 SScorer2=as.numeric(Suturing[76:150,"Scores"])
+shapiro.test(SScorer1)
+shapiro.test(SScorer2)
 #Wilcox Test
 wilcox.test(SScorer2,SScorer1, paired=TRUE, alternative ="two.sided")
 
-#Normality Tests
+#Assumption
 
-shapiro.test(CScorer1)
-shapiro.test(CScorer2)
-shapiro.test(SScorer1)
-shapiro.test(SScorer2)
+shapiro.test(Cutting$Scores)
+shapiro.test(Suturing$Scores)
 
 #Wilcox Test:
 wilcox.test(Cutting$Scores,Suturing$Scores,paired=TRUE, alternative ="two.sided")
@@ -218,7 +248,12 @@ p14 <- p14 + facet_grid(session~.)
 
 ggsave(filename="Plot/SuturingVsTime.pdf", plot=p14) 
 
-#GGPairs
+
+
+
+
+
+#Correlation : GGPairs
 cdata=data.frame(Cutting$Age,Cutting$Sex,Cutting$Session,Cutting$Scorer,Cutting$Scores)
 sdata=data.frame(Suturing$Age,Suturing$Sex,Suturing$Session,Suturing$Scorer,Suturing$Scores)
 colnames(cdata)=colnames(sdata)=c("Age","Sex","Session","Scorer","Scores")
@@ -234,6 +269,12 @@ ggsave(filename="Plot/Suturing_GGpairs.pdf", plot=p16)
 p17=ggpairs(data, columns=5:8,aes(col = Task, alpha=0.2))+theme_light()+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/Data_GGpairs.pdf", plot=p17) 
 
+
+
+
+
+
+
 #Subjects Vs Mean pp
 
 p18=ggplot(data, aes(Subjects, Normalised_PP,fill=Task)) + 
@@ -241,6 +282,14 @@ p18=ggplot(data, aes(Subjects, Normalised_PP,fill=Task)) +
   scale_fill_brewer(palette = "Set1")+ggtitle("Analysis of Perspiration based on Subject") +labs(x="Subject Number",y="Normalised Mean Perspiration")++stat_summary(fun.y="mean", geom="point", size=1, pch=16, color="red") +
   stat_summary(fun.data = give.n, geom = "text")+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/SubjectVsPP.pdf", plot=p18)
+
+
+
+
+
+
+
+
 
 
 #Tai Scores Analysis
@@ -290,7 +339,9 @@ p20 = ggplot(nd1, aes(x=TAI,y=Score,fill=TAI))  + theme_light()+theme(plot.title
   stat_summary(fun.data = give.n, geom = "text")+theme(panel.grid.major = element_line(colour = 'transparent'))
 ggsave(filename="Plot/TaiVsScores_Box.pdf", plot=p20)
 
+#Assumption:
+shapiro.test(Score_Above)
+shapiro.test(Score_below)
 
+wilcox.test(Score_below,Score_Above,alternative = "greater")
 
-
-t.test(Score_below,Score_Above)
