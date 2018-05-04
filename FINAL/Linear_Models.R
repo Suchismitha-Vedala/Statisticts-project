@@ -116,7 +116,7 @@ p2=ggplot(sdata,aes(session, Sutures,fill=session)) +theme_light()+ theme(plot.t
   #geom_jitter(alpha=0.2) +geom_smooth(method=lm)+xlim(1,5)+
   geom_bar(stat="identity",fill="#56B4E9")+
   theme(panel.grid.major = element_line(colour = 'transparent'))+
-  labs(x = 'Sessions', y = 'Number of Sutures')+ggtitle("Performance WRT number of sutures made summing  values of all subjects")
+  labs(x = 'Sessions', y = 'Number of Sutures')+ggtitle("Performance WRT Sutures of all subjects")
 ggsave(filename="Plot/PerformanceWRTSutures_bar.pdf", plot=p2)
 
 

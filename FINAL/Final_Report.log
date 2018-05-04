@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  3 MAY 2018 19:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  3 MAY 2018 21:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -718,16 +718,16 @@ Package pdftex.def Info: plot/SubjectVsPP.pdf used on input line 149.
 <plot/1_gender.pdf, id=51, 505.89pt x 505.89pt>
 File: plot/1_gender.pdf Graphic file (type pdf)
  <use plot/1_gender.pdf>
-Package pdftex.def Info: plot/1_gender.pdf used on input line 163.
+Package pdftex.def Info: plot/1_gender.pdf used on input line 165.
 (pdftex.def)             Requested size: 234.8775pt x 234.88132pt.
 
 <plot/1_age.pdf, id=52, 505.89pt x 505.89pt>
 File: plot/1_age.pdf Graphic file (type pdf)
  <use plot/1_age.pdf>
-Package pdftex.def Info: plot/1_age.pdf used on input line 168.
+Package pdftex.def Info: plot/1_age.pdf used on input line 170.
 (pdftex.def)             Requested size: 234.8775pt x 234.88132pt.
 
-Overfull \hbox (1.88399pt too wide) in paragraph at lines 162--171
+Overfull \hbox (1.88399pt too wide) in paragraph at lines 164--173
 []$[]$  $[]$ 
  []
 
@@ -735,7 +735,7 @@ Overfull \hbox (1.88399pt too wide) in paragraph at lines 162--171
 File: plot/tai_plot.pdf Graphic file (type pdf)
 
 <use plot/tai_plot.pdf>
-Package pdftex.def Info: plot/tai_plot.pdf used on input line 178.
+Package pdftex.def Info: plot/tai_plot.pdf used on input line 181.
 (pdftex.def)             Requested size: 234.8775pt x 234.88132pt.
  [9 <./plot/1_gender.pdf> <./plot/1_age.pdf>]
 <plot/subject01_State_Psychometric_Data_of_Cutting_and_Suturing.pdf, id=75, 505
@@ -745,7 +745,7 @@ c file (type pdf)
 
 <use plot/subject01_State_Psychometric_Data_of_Cutting_and_Suturing.pdf>
 Package pdftex.def Info: plot/subject01_State_Psychometric_Data_of_Cutting_and_
-Suturing.pdf used on input line 188.
+Suturing.pdf used on input line 192.
 (pdftex.def)             Requested size: 234.8775pt x 234.88132pt.
 
 <plot/subject02_State_Psychometric_Data_of_Cutting_and_Suturing.pdf, id=76, 505
@@ -755,10 +755,10 @@ c file (type pdf)
 
 <use plot/subject02_State_Psychometric_Data_of_Cutting_and_Suturing.pdf>
 Package pdftex.def Info: plot/subject02_State_Psychometric_Data_of_Cutting_and_
-Suturing.pdf used on input line 193.
+Suturing.pdf used on input line 197.
 (pdftex.def)             Requested size: 234.8775pt x 234.88132pt.
 
-Overfull \hbox (1.88399pt too wide) in paragraph at lines 187--196
+Overfull \hbox (1.88399pt too wide) in paragraph at lines 191--200
 []$[]$  $[]$ 
  []
 
@@ -768,7 +768,7 @@ File: plot/01_Perinasal_Perspiration.pdf Graphic file (type pdf)
 
 <use plot/01_Perinasal_Perspiration.pdf>
 Package pdftex.def Info: plot/01_Perinasal_Perspiration.pdf used on input line 
-203.
+210.
 (pdftex.def)             Requested size: 234.8775pt x 234.88132pt.
 
 <plot/02_Perinasal_Perspiration.pdf, id=86, 505.89pt x 505.89pt>
@@ -776,10 +776,10 @@ File: plot/02_Perinasal_Perspiration.pdf Graphic file (type pdf)
 
 <use plot/02_Perinasal_Perspiration.pdf>
 Package pdftex.def Info: plot/02_Perinasal_Perspiration.pdf used on input line 
-208.
+215.
 (pdftex.def)             Requested size: 234.8775pt x 234.88132pt.
 
-Overfull \hbox (1.88399pt too wide) in paragraph at lines 202--211
+Overfull \hbox (1.88399pt too wide) in paragraph at lines 209--218
 []$[]$  $[]$ 
  []
 
@@ -789,17 +789,17 @@ lot/subject02_State_Psychometric_Data_of_Cutting_and_Suturing.pdf>]
 File: plot/1_Score_barplot.pdf Graphic file (type pdf)
 
 <use plot/1_Score_barplot.pdf>
-Package pdftex.def Info: plot/1_Score_barplot.pdf used on input line 218.
+Package pdftex.def Info: plot/1_Score_barplot.pdf used on input line 227.
 (pdftex.def)             Requested size: 234.8775pt x 234.88132pt.
 
 <plot/1_Time_barplot.pdf, id=101, 505.89pt x 505.89pt>
 File: plot/1_Time_barplot.pdf Graphic file (type pdf)
 
 <use plot/1_Time_barplot.pdf>
-Package pdftex.def Info: plot/1_Time_barplot.pdf used on input line 225.
+Package pdftex.def Info: plot/1_Time_barplot.pdf used on input line 233.
 (pdftex.def)             Requested size: 234.8775pt x 234.88132pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--229
+Underfull \hbox (badness 10000) in paragraph at lines 222--237
 
  []
 
@@ -816,24 +816,24 @@ F inclusion: found PDF version <1.6>, but at most version <1.5> allowed
 File: plot/ScoreSummary.pdf Graphic file (type pdf)
 
 <use plot/ScoreSummary.pdf>
-Package pdftex.def Info: plot/ScoreSummary.pdf used on input line 243.
+Package pdftex.def Info: plot/ScoreSummary.pdf used on input line 251.
 (pdftex.def)             Requested size: 375.80544pt x 330.95584pt.
 
 <plot/ScorerVsScore.pdf, id=130, 396.48125pt x 264.99pt>
 File: plot/ScorerVsScore.pdf Graphic file (type pdf)
 
 <use plot/ScorerVsScore.pdf>
-Package pdftex.def Info: plot/ScorerVsScore.pdf used on input line 251.
+Package pdftex.def Info: plot/ScorerVsScore.pdf used on input line 259.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
 <plot/GenderVsScore.pdf, id=131, 396.48125pt x 264.99pt>
 File: plot/GenderVsScore.pdf Graphic file (type pdf)
 
 <use plot/GenderVsScore.pdf>
-Package pdftex.def Info: plot/GenderVsScore.pdf used on input line 256.
+Package pdftex.def Info: plot/GenderVsScore.pdf used on input line 264.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-Overfull \hbox (1.88399pt too wide) in paragraph at lines 250--259
+Overfull \hbox (1.88399pt too wide) in paragraph at lines 258--267
 []$[]$  $[]$ 
  []
 
@@ -841,47 +841,47 @@ Overfull \hbox (1.88399pt too wide) in paragraph at lines 250--259
 File: plot/TaskVsScore.pdf Graphic file (type pdf)
 
 <use plot/TaskVsScore.pdf>
-Package pdftex.def Info: plot/TaskVsScore.pdf used on input line 262.
+Package pdftex.def Info: plot/TaskVsScore.pdf used on input line 270.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
 <plot/SessionVsScore.pdf, id=133, 396.48125pt x 264.99pt>
 File: plot/SessionVsScore.pdf Graphic file (type pdf)
 
 <use plot/SessionVsScore.pdf>
-Package pdftex.def Info: plot/SessionVsScore.pdf used on input line 267.
+Package pdftex.def Info: plot/SessionVsScore.pdf used on input line 275.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-Overfull \hbox (1.88399pt too wide) in paragraph at lines 261--270
+Overfull \hbox (1.88399pt too wide) in paragraph at lines 269--278
 []$[]$  $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--276
+Underfull \hbox (badness 10000) in paragraph at lines 242--284
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--276
+Underfull \hbox (badness 10000) in paragraph at lines 242--284
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--276
+Underfull \hbox (badness 10000) in paragraph at lines 242--284
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--276
+Underfull \hbox (badness 10000) in paragraph at lines 242--284
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--276
+Underfull \hbox (badness 10000) in paragraph at lines 242--284
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--276
+Underfull \hbox (badness 10000) in paragraph at lines 242--284
 
  []
 
@@ -894,24 +894,24 @@ pdf>] <plot/TimeSummary.pdf, id=174, 592.6169pt x 487.49626pt>
 File: plot/TimeSummary.pdf Graphic file (type pdf)
 
 <use plot/TimeSummary.pdf>
-Package pdftex.def Info: plot/TimeSummary.pdf used on input line 288.
+Package pdftex.def Info: plot/TimeSummary.pdf used on input line 296.
 (pdftex.def)             Requested size: 375.80544pt x 309.14757pt.
 
 <plot/ScorerVsTime.pdf, id=175, 396.48125pt x 264.99pt>
 File: plot/ScorerVsTime.pdf Graphic file (type pdf)
 
 <use plot/ScorerVsTime.pdf>
-Package pdftex.def Info: plot/ScorerVsTime.pdf used on input line 296.
+Package pdftex.def Info: plot/ScorerVsTime.pdf used on input line 304.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
 <plot/GenderVsTime.pdf, id=176, 396.48125pt x 264.99pt>
 File: plot/GenderVsTime.pdf Graphic file (type pdf)
 
 <use plot/GenderVsTime.pdf>
-Package pdftex.def Info: plot/GenderVsTime.pdf used on input line 301.
+Package pdftex.def Info: plot/GenderVsTime.pdf used on input line 309.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-Overfull \hbox (1.88399pt too wide) in paragraph at lines 295--304
+Overfull \hbox (1.88399pt too wide) in paragraph at lines 303--312
 []$[]$  $[]$ 
  []
 
@@ -919,32 +919,32 @@ Overfull \hbox (1.88399pt too wide) in paragraph at lines 295--304
 File: plot/TaskVsTime.pdf Graphic file (type pdf)
 
 <use plot/TaskVsTime.pdf>
-Package pdftex.def Info: plot/TaskVsTime.pdf used on input line 307.
+Package pdftex.def Info: plot/TaskVsTime.pdf used on input line 315.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
 <plot/SessionVsTime.pdf, id=178, 396.48125pt x 264.99pt>
 File: plot/SessionVsTime.pdf Graphic file (type pdf)
 
 <use plot/SessionVsTime.pdf>
-Package pdftex.def Info: plot/SessionVsTime.pdf used on input line 312.
+Package pdftex.def Info: plot/SessionVsTime.pdf used on input line 320.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-Overfull \hbox (1.88399pt too wide) in paragraph at lines 306--315
+Overfull \hbox (1.88399pt too wide) in paragraph at lines 314--323
 []$[]$  $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 279--319
+Underfull \hbox (badness 10000) in paragraph at lines 287--327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 279--319
+Underfull \hbox (badness 10000) in paragraph at lines 287--327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 279--319
+Underfull \hbox (badness 10000) in paragraph at lines 287--327
 
  []
 
@@ -954,14 +954,14 @@ ry.pdf> <./plot/ScorerVsTime.pdf> <./plot/GenderVsTime.pdf>]
 File: plot/Corr_Sutures.pdf Graphic file (type pdf)
 
 <use plot/Corr_Sutures.pdf>
-Package pdftex.def Info: plot/Corr_Sutures.pdf used on input line 325.
+Package pdftex.def Info: plot/Corr_Sutures.pdf used on input line 333.
 (pdftex.def)             Requested size: 328.82707pt x 288.80894pt.
 
 <plot/PerformanceWRTSutures.pdf, id=219, 396.48125pt x 264.99pt>
 File: plot/PerformanceWRTSutures.pdf Graphic file (type pdf)
 
 <use plot/PerformanceWRTSutures.pdf>
-Package pdftex.def Info: plot/PerformanceWRTSutures.pdf used on input line 332.
+Package pdftex.def Info: plot/PerformanceWRTSutures.pdf used on input line 340.
 
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
@@ -970,10 +970,10 @@ File: plot/PerformanceWRTSutures_bar.pdf Graphic file (type pdf)
 
 <use plot/PerformanceWRTSutures_bar.pdf>
 Package pdftex.def Info: plot/PerformanceWRTSutures_bar.pdf used on input line 
-337.
+345.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-Overfull \hbox (1.88399pt too wide) in paragraph at lines 331--340
+Overfull \hbox (1.88399pt too wide) in paragraph at lines 339--348
 []$[]$  $[]$ 
  []
 
@@ -981,22 +981,22 @@ Overfull \hbox (1.88399pt too wide) in paragraph at lines 331--340
 File: plot/Sutures_Summary.pdf Graphic file (type pdf)
 
 <use plot/Sutures_Summary.pdf>
-Package pdftex.def Info: plot/Sutures_Summary.pdf used on input line 343.
+Package pdftex.def Info: plot/Sutures_Summary.pdf used on input line 351.
 (pdftex.def)             Requested size: 328.82707pt x 228.41466pt.
 
 <plot/SuturingVsTime.pdf, id=222, 396.48125pt x 264.99pt>
 File: plot/SuturingVsTime.pdf Graphic file (type pdf)
 
 <use plot/SuturingVsTime.pdf>
-Package pdftex.def Info: plot/SuturingVsTime.pdf used on input line 349.
+Package pdftex.def Info: plot/SuturingVsTime.pdf used on input line 357.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--360
+Underfull \hbox (badness 10000) in paragraph at lines 330--368
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--360
+Underfull \hbox (badness 10000) in paragraph at lines 330--368
 
  []
 
@@ -1006,7 +1006,7 @@ s.pdf> <./plot/PerformanceWRTSutures.pdf> <./plot/PerformanceWRTSutures_bar.pdf
 File: plot/Cutting_ScorerVsScore.pdf Graphic file (type pdf)
 
 <use plot/Cutting_ScorerVsScore.pdf>
-Package pdftex.def Info: plot/Cutting_ScorerVsScore.pdf used on input line 372.
+Package pdftex.def Info: plot/Cutting_ScorerVsScore.pdf used on input line 380.
 
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
@@ -1014,26 +1014,26 @@ Package pdftex.def Info: plot/Cutting_ScorerVsScore.pdf used on input line 372.
 File: plot/Suturing_ScorerVsScore.pdf Graphic file (type pdf)
 
 <use plot/Suturing_ScorerVsScore.pdf>
-Package pdftex.def Info: plot/Suturing_ScorerVsScore.pdf used on input line 377
+Package pdftex.def Info: plot/Suturing_ScorerVsScore.pdf used on input line 385
 .
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-Overfull \hbox (1.88399pt too wide) in paragraph at lines 371--380
+Overfull \hbox (1.88399pt too wide) in paragraph at lines 379--388
 []$[]$  $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 363--387
+Underfull \hbox (badness 10000) in paragraph at lines 371--395
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 363--387
+Underfull \hbox (badness 10000) in paragraph at lines 371--395
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 363--387
+Underfull \hbox (badness 10000) in paragraph at lines 371--395
 
  []
 
@@ -1042,20 +1042,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 363--387
 File: plot/SuturingVsSex.pdf Graphic file (type pdf)
 
 <use plot/SuturingVsSex.pdf>
-Package pdftex.def Info: plot/SuturingVsSex.pdf used on input line 396.
+Package pdftex.def Info: plot/SuturingVsSex.pdf used on input line 404.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 390--406
+Underfull \hbox (badness 10000) in paragraph at lines 398--414
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 390--406
+Underfull \hbox (badness 10000) in paragraph at lines 398--414
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 390--406
+Underfull \hbox (badness 10000) in paragraph at lines 398--414
 
  []
 
@@ -1064,95 +1064,126 @@ Underfull \hbox (badness 10000) in paragraph at lines 390--406
 File: plot/TaiVsScores.pdf Graphic file (type pdf)
 
 <use plot/TaiVsScores.pdf>
-Package pdftex.def Info: plot/TaiVsScores.pdf used on input line 418.
+Package pdftex.def Info: plot/TaiVsScores.pdf used on input line 426.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
 <plot/TaiVsScores_Box.pdf, id=308, 396.48125pt x 264.99pt>
 File: plot/TaiVsScores_Box.pdf Graphic file (type pdf)
 
 <use plot/TaiVsScores_Box.pdf>
-Package pdftex.def Info: plot/TaiVsScores_Box.pdf used on input line 423.
+Package pdftex.def Info: plot/TaiVsScores_Box.pdf used on input line 431.
 (pdftex.def)             Requested size: 234.8775pt x 156.98564pt.
 
-Overfull \hbox (1.88399pt too wide) in paragraph at lines 417--426
+Overfull \hbox (1.88399pt too wide) in paragraph at lines 425--434
 []$[]$  $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--432
+Underfull \hbox (badness 10000) in paragraph at lines 417--440
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--432
+Underfull \hbox (badness 10000) in paragraph at lines 417--440
 
  []
 
 [22 <./plot/SuturingVsSex.pdf>] [23 <./plot/TaiVsScores.pdf> <./plot/TaiVsScore
-s_Box.pdf>] <plot/multiplot_state_psycho.pdf, id=337, 794.97pt x 614.295pt>
-File: plot/multiplot_state_psycho.pdf Graphic file (type pdf)
+s_Box.pdf>] <plot/Q3-1-labels.pdf, id=337, 794.97pt x 614.295pt>
+File: plot/Q3-1-labels.pdf Graphic file (type pdf)
 
-<use plot/multiplot_state_psycho.pdf>
-Package pdftex.def Info: plot/multiplot_state_psycho.pdf used on input line 453
-.
+<use plot/Q3-1-labels.pdf>
+Package pdftex.def Info: plot/Q3-1-labels.pdf used on input line 461.
 (pdftex.def)             Requested size: 469.75502pt x 363.00267pt.
 
-<plot/multiplot_perinasal_percep.pdf, id=338, 794.97pt x 614.295pt>
-File: plot/multiplot_perinasal_percep.pdf Graphic file (type pdf)
+<plot/Q3-2-labels.pdf, id=338, 794.97pt x 614.295pt>
+File: plot/Q3-2-labels.pdf Graphic file (type pdf)
 
-<use plot/multiplot_perinasal_percep.pdf>
-Package pdftex.def Info: plot/multiplot_perinasal_percep.pdf used on input line
- 461.
+<use plot/Q3-2-labels.pdf>
+Package pdftex.def Info: plot/Q3-2-labels.pdf used on input line 466.
 (pdftex.def)             Requested size: 469.75502pt x 363.00267pt.
- [24 <./plot/multiplot_state_psycho.pdf>] <plot/multiplot_task_time.pdf, id=348
-, 794.97pt x 614.295pt>
-File: plot/multiplot_task_time.pdf Graphic file (type pdf)
+ [24 <./plot/Q3-1-labels.pdf>]
+<plot/Q4-1-title.pdf, id=348, 794.97pt x 614.295pt>
+File: plot/Q4-1-title.pdf Graphic file (type pdf)
+ <use plot/Q4-1-title.pdf>
+Package pdftex.def Info: plot/Q4-1-title.pdf used on input line 474.
+(pdftex.def)             Requested size: 469.75502pt x 363.00267pt.
 
-<use plot/multiplot_task_time.pdf>
-Package pdftex.def Info: plot/multiplot_task_time.pdf used on input line 469.
-(pdftex.def)             Requested size: 469.75502pt x 363.00267pt.
- [25 <./plot/multiplot_perinasal_percep.pdf>] <plot/multiplot_scorer.pdf, id=35
-7, 794.97pt x 614.295pt>
-File: plot/multiplot_scorer.pdf Graphic file (type pdf)
+<plot/Q4-2-labels.pdf, id=349, 794.97pt x 614.295pt>
+File: plot/Q4-2-labels.pdf Graphic file (type pdf)
 
-<use plot/multiplot_scorer.pdf>
-Package pdftex.def Info: plot/multiplot_scorer.pdf used on input line 477.
+<use plot/Q4-2-labels.pdf>
+Package pdftex.def Info: plot/Q4-2-labels.pdf used on input line 479.
 (pdftex.def)             Requested size: 469.75502pt x 363.00267pt.
- [26 <./plot/multiplot_task_time.pdf>]
-<plot/Data_GGpairs.pdf, id=366, 396.48125pt x 264.99pt>
+ [25 <./plot/Q3-2-labels.pdf>] [26 <./plot/Q4-1-title.pdf>] [27 <./plot/Q4-2-la
+bels.pdf>]
+<plot/Q5-time-1-labels.pdf, id=374, 794.97pt x 614.295pt>
+File: plot/Q5-time-1-labels.pdf Graphic file (type pdf)
+
+<use plot/Q5-time-1-labels.pdf>
+Package pdftex.def Info: plot/Q5-time-1-labels.pdf used on input line 487.
+(pdftex.def)             Requested size: 469.75502pt x 363.00267pt.
+
+<plot/Q5-time-2-labels.pdf, id=375, 794.97pt x 614.295pt>
+File: plot/Q5-time-2-labels.pdf Graphic file (type pdf)
+
+<use plot/Q5-time-2-labels.pdf>
+Package pdftex.def Info: plot/Q5-time-2-labels.pdf used on input line 492.
+(pdftex.def)             Requested size: 469.75502pt x 363.00267pt.
+ [28
+
+ <./plot/Q5-time-1-labels.pdf>]
+<plot/Q5-2-1-labels.pdf, id=384, 794.97pt x 614.295pt>
+File: plot/Q5-2-1-labels.pdf Graphic file (type pdf)
+
+<use plot/Q5-2-1-labels.pdf>
+Package pdftex.def Info: plot/Q5-2-1-labels.pdf used on input line 500.
+(pdftex.def)             Requested size: 469.75502pt x 363.00267pt.
+
+<plot/Q5-2-2-labels.pdf, id=385, 794.97pt x 614.295pt>
+File: plot/Q5-2-2-labels.pdf Graphic file (type pdf)
+
+<use plot/Q5-2-2-labels.pdf>
+Package pdftex.def Info: plot/Q5-2-2-labels.pdf used on input line 505.
+(pdftex.def)             Requested size: 469.75502pt x 363.00267pt.
+ [29 <./plot/Q5-time-2-labels.pdf>] [30 <./plot/Q5-2-1-labels.pdf>] [31 <./plot
+/Q5-2-2-labels.pdf>]
+<plot/Data_GGpairs.pdf, id=411, 396.48125pt x 264.99pt>
 File: plot/Data_GGpairs.pdf Graphic file (type pdf)
 
 <use plot/Data_GGpairs.pdf>
-Package pdftex.def Info: plot/Data_GGpairs.pdf used on input line 485.
+Package pdftex.def Info: plot/Data_GGpairs.pdf used on input line 513.
 (pdftex.def)             Requested size: 469.75502pt x 313.97128pt.
- [27 <./plot/multiplot_scorer.pdf>]
-<plot/Cutting_GGpairs.pdf, id=375, 396.48125pt x 264.99pt>
+
+<plot/Cutting_GGpairs.pdf, id=412, 396.48125pt x 264.99pt>
 File: plot/Cutting_GGpairs.pdf Graphic file (type pdf)
 
 <use plot/Cutting_GGpairs.pdf>
-Package pdftex.def Info: plot/Cutting_GGpairs.pdf used on input line 493.
+Package pdftex.def Info: plot/Cutting_GGpairs.pdf used on input line 521.
 (pdftex.def)             Requested size: 469.75502pt x 313.97128pt.
- [28 <./plot/Data_GGpairs.pdf>]
-<plot/Suturing_GGpairs.pdf, id=388, 396.48125pt x 264.99pt>
+ [32
+
+ <./plot/Data_GGpairs.pdf>]
+<plot/Suturing_GGpairs.pdf, id=425, 396.48125pt x 264.99pt>
 File: plot/Suturing_GGpairs.pdf Graphic file (type pdf)
 
 <use plot/Suturing_GGpairs.pdf>
-Package pdftex.def Info: plot/Suturing_GGpairs.pdf used on input line 501.
+Package pdftex.def Info: plot/Suturing_GGpairs.pdf used on input line 529.
 (pdftex.def)             Requested size: 469.75502pt x 313.97128pt.
- [29 <./plot/Cutting_GGpairs.pdf>]
+ [33 <./plot/Cutting_GGpairs.pdf>]
 
 AED: lastpage setting LastPage
-[30 <./plot/Suturing_GGpairs.pdf>] (./Final_Report.aux) )
+[34 <./plot/Suturing_GGpairs.pdf>] (./Final_Report.aux) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 112 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 6791 strings out of 492995
- 108706 string characters out of 6132704
+ 6823 strings out of 492995
+ 109147 string characters out of 6132704
  201740 words of memory out of 5000000
- 10012 multiletter control sequences out of 15000+600000
- 117765 words of font info for 194 fonts, out of 8000000 for 9000
+ 10028 multiletter control sequences out of 15000+600000
+ 118575 words of font info for 203 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,10n,43p,622b,390s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc
@@ -1160,10 +1191,10 @@ Here is how much of TeX's memory you used:
 </usr/local/texlive/2017/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/l
 ocal/texlive/2017/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/te
 xlive/2017/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on Final_Report.pdf (31 pages, 1991034 bytes).
+Output written on Final_Report.pdf (35 pages, 2034294 bytes).
 PDF statistics:
- 430 PDF objects out of 1000 (max. 8388607)
- 295 compressed objects within 3 object streams
+ 467 PDF objects out of 1000 (max. 8388607)
+ 319 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
- 33476 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 33496 words of extra memory for PDF output out of 35830 (max. 10000000)
 

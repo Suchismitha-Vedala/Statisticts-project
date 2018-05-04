@@ -1,0 +1,10 @@
+\beamer@sectionintoc {1}{Motivation}{3}{0}{1}
+\beamer@sectionintoc {2}{Data Cleaning and Reorganization}{3}{0}{2}
+\beamer@sectionintoc {3}{Initial Analysis}{3}{0}{3}
+\beamer@subsectionintoc {3}{1}{Correlation}{3}{0}{3}
+\beamer@sectionintoc {4}{Quality Control}{3}{0}{4}
+\beamer@sectionintoc {5}{Linear Model}{3}{0}{5}
+\beamer@sectionintoc {6}{Hypothesis Testing}{3}{0}{6}
+\beamer@sectionintoc {7}{Summary}{3}{0}{7}
+\beamer@sectionintoc {8}{Second Main Section}{18}{0}{8}
+\beamer@subsectionintoc {8}{1}{Another Subsection}{18}{0}{8}
