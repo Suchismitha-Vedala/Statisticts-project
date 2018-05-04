@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  3 MAY 2018 19:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  3 MAY 2018 19:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1093,7 +1093,7 @@ s_Box.pdf>] <plot/multiplot_state_psycho.pdf, id=337, 794.97pt x 614.295pt>
 File: plot/multiplot_state_psycho.pdf Graphic file (type pdf)
 
 <use plot/multiplot_state_psycho.pdf>
-Package pdftex.def Info: plot/multiplot_state_psycho.pdf used on input line 452
+Package pdftex.def Info: plot/multiplot_state_psycho.pdf used on input line 453
 .
 (pdftex.def)             Requested size: 469.75502pt x 363.00267pt.
 
@@ -1102,51 +1102,47 @@ File: plot/multiplot_perinasal_percep.pdf Graphic file (type pdf)
 
 <use plot/multiplot_perinasal_percep.pdf>
 Package pdftex.def Info: plot/multiplot_perinasal_percep.pdf used on input line
- 460.
+ 461.
 (pdftex.def)             Requested size: 469.75502pt x 363.00267pt.
  [24 <./plot/multiplot_state_psycho.pdf>] <plot/multiplot_task_time.pdf, id=348
 , 794.97pt x 614.295pt>
 File: plot/multiplot_task_time.pdf Graphic file (type pdf)
 
 <use plot/multiplot_task_time.pdf>
-Package pdftex.def Info: plot/multiplot_task_time.pdf used on input line 468.
+Package pdftex.def Info: plot/multiplot_task_time.pdf used on input line 469.
 (pdftex.def)             Requested size: 469.75502pt x 363.00267pt.
  [25 <./plot/multiplot_perinasal_percep.pdf>] <plot/multiplot_scorer.pdf, id=35
 7, 794.97pt x 614.295pt>
 File: plot/multiplot_scorer.pdf Graphic file (type pdf)
 
 <use plot/multiplot_scorer.pdf>
-Package pdftex.def Info: plot/multiplot_scorer.pdf used on input line 476.
+Package pdftex.def Info: plot/multiplot_scorer.pdf used on input line 477.
 (pdftex.def)             Requested size: 469.75502pt x 363.00267pt.
  [26 <./plot/multiplot_task_time.pdf>]
 <plot/Data_GGpairs.pdf, id=366, 396.48125pt x 264.99pt>
 File: plot/Data_GGpairs.pdf Graphic file (type pdf)
 
 <use plot/Data_GGpairs.pdf>
-Package pdftex.def Info: plot/Data_GGpairs.pdf used on input line 484.
+Package pdftex.def Info: plot/Data_GGpairs.pdf used on input line 485.
 (pdftex.def)             Requested size: 469.75502pt x 313.97128pt.
  [27 <./plot/multiplot_scorer.pdf>]
 <plot/Cutting_GGpairs.pdf, id=375, 396.48125pt x 264.99pt>
 File: plot/Cutting_GGpairs.pdf Graphic file (type pdf)
 
 <use plot/Cutting_GGpairs.pdf>
-Package pdftex.def Info: plot/Cutting_GGpairs.pdf used on input line 492.
+Package pdftex.def Info: plot/Cutting_GGpairs.pdf used on input line 493.
 (pdftex.def)             Requested size: 469.75502pt x 313.97128pt.
  [28 <./plot/Data_GGpairs.pdf>]
 <plot/Suturing_GGpairs.pdf, id=388, 396.48125pt x 264.99pt>
 File: plot/Suturing_GGpairs.pdf Graphic file (type pdf)
 
 <use plot/Suturing_GGpairs.pdf>
-Package pdftex.def Info: plot/Suturing_GGpairs.pdf used on input line 500.
+Package pdftex.def Info: plot/Suturing_GGpairs.pdf used on input line 501.
 (pdftex.def)             Requested size: 469.75502pt x 313.97128pt.
  [29 <./plot/Cutting_GGpairs.pdf>]
 
 AED: lastpage setting LastPage
-[30 <./plot/Suturing_GGpairs.pdf>] (./Final_Report.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- )
+[30 <./plot/Suturing_GGpairs.pdf>] (./Final_Report.aux) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 112 ({)
@@ -1164,7 +1160,7 @@ Here is how much of TeX's memory you used:
 </usr/local/texlive/2017/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/l
 ocal/texlive/2017/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/te
 xlive/2017/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on Final_Report.pdf (31 pages, 1990960 bytes).
+Output written on Final_Report.pdf (31 pages, 1991034 bytes).
 PDF statistics:
  430 PDF objects out of 1000 (max. 8388607)
  295 compressed objects within 3 object streams
